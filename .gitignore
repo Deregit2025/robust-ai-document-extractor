@@ -1,0 +1,83 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyi
+
+# Virtual environment
+venv/
+.env
+.env.*
+.venv/
+
+# pip cache
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ==========================
+# IDEs and Editors
+# ==========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.DS_Store
+
+# ==========================
+# Jupyter / Notebook
+# ==========================
+.ipynb_checkpoints
+
+# ==========================
+# Logs
+# ==========================
+*.log
+logs/
+
+# ==========================
+# OS generated
+# ==========================
+Thumbs.db
+Desktop.ini
+
+# ==========================
+# Doc Extraction & Artifacts
+# ==========================
+# Raw data (optionally version control only small test files)
+data/raw/
+data/processed/
+.refinery/profiles/
+.refinery/extraction_ledger.jsonl
+
+# ==========================
+# Pytest / Coverage
+# ==========================
+htmlcov/
+.coverage
+.cache
+.pytest_cache/
+
+# ==========================
+# Poetry / Pyproject / Build
+# ==========================
+poetry.lock
+*.toml.lock
+
+# ==========================
+# Misc
+# ==========================
+*.bak
+*.tmp
+*.old
