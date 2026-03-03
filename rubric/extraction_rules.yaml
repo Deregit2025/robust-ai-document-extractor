@@ -1,0 +1,42 @@
+# extraction_rules.yaml
+# Defines chunking, extraction thresholds, and strategy selection logic for documents
+
+chunking:
+  method: semantic               # Options: semantic, fixed
+  semantic:
+    max_tokens: 500              # Maximum tokens per chunk
+    min_tokens: 100              # Minimum tokens per chunk
+    overlap_tokens: 50           # Overlap between consecutive chunks
+  fixed:
+    page_window: 2               # Pages per chunk if using fixed
+    overlap_pages: 0             # Overlap if using fixed
+
+strategy_tiers:
+  fast_text:
+    applicable_layouts:
+      - single_column
+    confidence_threshold: 0.85
+    estimated_cost: low
+  layout_model:
+    applicable_layouts:
+      - table_heavy
+      - figure_heavy
+      - mixed
+    confidence_threshold: 0.9
+    estimated_cost: medium
+  vision_model:
+    applicable_layouts:
+      - scanned_image
+      - complex_mixed
+    confidence_threshold: 0.95
+    estimated_cost: high
+
+escalation:
+  # If extraction confidence below threshold, escalate to higher-tier strategy
+  enable: true
+  max_attempts: 3
+  logging: true
+
+defaults:
+  language: en
+  domain_hint: general
