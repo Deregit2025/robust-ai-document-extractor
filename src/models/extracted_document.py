@@ -48,3 +48,5 @@ class ExtractedDocument(BaseModel):
     )
 
     total_pages: int
+    strategy_name: Optional[str] = None
+    confidence: Optional[float] = None

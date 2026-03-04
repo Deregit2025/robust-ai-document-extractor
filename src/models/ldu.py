@@ -55,6 +55,21 @@ class LDU(BaseModel):
         description="Stable content hash for verification and provenance"
     )
 
+    headers: Optional[List[str]] = Field(
+        None,
+        description="Table headers if this is a table chunk"
+    )
+
+    caption: Optional[str] = Field(
+        None,
+        description="Figure caption if this is a figure chunk"
+    )
+
+    cross_refs: Optional[List[str]] = Field(
+        None,
+        description="Cross-references found in this chunk (e.g. 'see Table 3')"
+    )
+
     @staticmethod
     def generate_content_hash(content: str) -> str:
         """
@@ -72,6 +87,8 @@ class LDU(BaseModel):
         token_count: int,
         bounding_box: Optional[BoundingBox] = None,
         parent_section: Optional[str] = None,
+        headers: Optional[List[str]] = None,
+        caption: Optional[str] = None,
     ):
         """
         Factory constructor that auto-generates content_hash.
@@ -85,4 +102,6 @@ class LDU(BaseModel):
             parent_section=parent_section,
             token_count=token_count,
             content_hash=cls.generate_content_hash(content),
+            headers=headers,
+            caption=caption
         )
