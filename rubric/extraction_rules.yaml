@@ -18,6 +18,9 @@ chunking:
     overlap_pages: 0
 
 strategy_tiers:
+  # The router evaluates strategies in order: FastText -> Layout -> Vision
+  # If a strategy yields a confidence below its 'confidence_threshold', the 
+  # system escalates to the next tier in the cascade.
   fast_text_sufficient:          # Tier A
     provider: "pdfplumber"
     model_id: "native_extractor"
@@ -66,3 +69,30 @@ defaults:
   language: en
   domain_hint: general
   strict_mode: true
+
+triage:
+  origin:
+    # Thresholds for classifying the source format of the document.
+    # High scanned ratio or empty text triggers Vision routing.
+    scanned_image_ratio_threshold: 0.5
+    # Documents pulling fewer than this characters are classified as zero-text
+    zero_text_char_limit: 50
+    form_interactive_ratio: 0.1
+    image_area_coverage_threshold: 0.8  # if > 80% of page is images
+  layout:
+    table_heavy_threshold: 0.3
+    figure_heavy_threshold: 0.3
+  domains:
+    # Keyword lists for domain classification. 
+    # To onboard a new domain, simply add a new list key here with relevant trigger words.
+    financial: ["revenue", "income", "balance sheet", "profit", "fiscal", "tax"]
+    technical: ["algorithm", "performance", "implementation", "latency", "system", "architecture"]
+    medical: ["patient", "diagnosis", "treatment", "clinical", "symptom", "therapy"]
+
+vision_extractor:
+  # Cost and stability limits for the external Vision (VLM) fallback
+  max_pages_budget: 10
+  max_tokens_per_page: 1500
+  retry:
+    max_retries: 3
+    retry_delay_seconds: 5
