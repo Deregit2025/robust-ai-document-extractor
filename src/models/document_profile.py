@@ -22,6 +22,11 @@ class DocumentProfile(BaseModel):
         "mixed",
         "form_fillable"
     ] = Field(..., description="Document origin classification")
+    
+    origin_confidence: float = Field(
+        ..., ge=0.0, le=1.0, 
+        description="Confidence score for origin classification"
+    )
 
     layout_complexity: Literal[
         "single_column",
@@ -30,6 +35,11 @@ class DocumentProfile(BaseModel):
         "figure_heavy",
         "mixed"
     ] = Field(..., description="Layout structural complexity")
+    
+    layout_confidence: float = Field(
+        ..., ge=0.0, le=1.0, 
+        description="Confidence score for layout complexity"
+    )
 
     language: str = Field(..., description="Detected language code (e.g., 'en')")
     language_confidence: float = Field(
@@ -44,6 +54,11 @@ class DocumentProfile(BaseModel):
         "medical",
         "general"
     ] = Field(..., description="Domain classification hint")
+    
+    domain_confidence: float = Field(
+        ..., ge=0.0, le=1.0, 
+        description="Confidence score for domain classification hint"
+    )
 
     estimated_extraction_cost: Literal[
         "fast_text_sufficient",

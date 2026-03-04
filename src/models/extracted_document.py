@@ -7,28 +7,26 @@ must output, regardless of extraction method.
 
 from pydantic import BaseModel, Field
 from typing import List, Tuple, Optional
-
-
-BoundingBox = Tuple[float, float, float, float]
+from src.models.common import BBox
 
 
 class TextBlock(BaseModel):
     content: str
     page: int
-    bbox: BoundingBox
+    bbox: BBox
 
 
 class TableBlock(BaseModel):
     headers: List[str]
     rows: List[List[str]]
     page: int
-    bbox: BoundingBox
+    bbox: BBox
 
 
 class FigureBlock(BaseModel):
     caption: Optional[str] = None
     page: int
-    bbox: BoundingBox
+    bbox: BBox
 
 
 class ExtractedDocument(BaseModel):
@@ -45,6 +43,16 @@ class ExtractedDocument(BaseModel):
     reading_order: List[int] = Field(
         default_factory=list,
         description="Ordered list of content block indices"
+    )
+
+    escalation_history: List[str] = Field(
+        default_factory=list,
+        description="Log of extraction strategies attempted and failed"
+    )
+
+    needs_human_review: bool = Field(
+        default=False,
+        description="Flag denoting if all tiers failed or yielded critically low confidence"
     )
 
     total_pages: int

@@ -5,12 +5,11 @@ Represents a semantically coherent, self-contained unit
 of document content suitable for retrieval and indexing.
 """
 
-from pydantic import BaseModel, Field
-from typing import List, Tuple, Optional
+from pydantic import BaseModel, Field, model_validator
+from typing import List, Tuple, Optional, Literal
+from typing_extensions import Self
 import hashlib
-
-
-BoundingBox = Tuple[float, float, float, float]
+from src.models.common import BBox
 
 
 class LDU(BaseModel):
@@ -24,9 +23,9 @@ class LDU(BaseModel):
 
     content: str = Field(..., description="Text content of this unit")
 
-    chunk_type: str = Field(
+    chunk_type: Literal["text", "table", "figure", "list", "equation", "code", "header", "footer", "toc"] = Field(
         ...,
-        description="Type of chunk: text | table | figure | list | section"
+        description="Type of chunk: text | table | figure | list | equation | code | header | footer | toc"
     )
 
     page_refs: List[int] = Field(
@@ -34,10 +33,16 @@ class LDU(BaseModel):
         description="Pages this chunk spans"
     )
 
-    bounding_box: Optional[BoundingBox] = Field(
+    bounding_box: Optional[BBox] = Field(
         None,
         description="Primary bounding box reference for provenance"
     )
+
+    @model_validator(mode='after')
+    def validate_page_refs(self) -> Self:
+        if not self.page_refs:
+            raise ValueError("page_refs cannot be empty")
+        return self
 
     parent_section: Optional[str] = Field(
         None,
@@ -85,7 +90,7 @@ class LDU(BaseModel):
         chunk_type: str,
         page_refs: List[int],
         token_count: int,
-        bounding_box: Optional[BoundingBox] = None,
+        bounding_box: Optional[BBox] = None,
         parent_section: Optional[str] = None,
         headers: Optional[List[str]] = None,
         caption: Optional[str] = None,

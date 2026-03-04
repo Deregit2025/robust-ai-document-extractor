@@ -6,10 +6,8 @@ audit mode, and verification workflows.
 """
 
 from pydantic import BaseModel, Field
-from typing import List, Tuple
-
-
-BoundingBox = Tuple[float, float, float, float]
+from typing import List, Tuple, Optional
+from src.models.common import BBox
 
 
 class ProvenanceEntry(BaseModel):
@@ -23,7 +21,7 @@ class ProvenanceEntry(BaseModel):
 
     page_number: int = Field(..., ge=1, description="Source page number")
 
-    bounding_box: BoundingBox = Field(
+    bounding_box: BBox = Field(
         ...,
         description="Spatial bounding box coordinates (x0, y0, x1, y1)"
     )
@@ -45,6 +43,11 @@ class ProvenanceChain(BaseModel):
     """
 
     answer: str = Field(..., description="Generated answer")
+
+    bbox: Optional[BBox] = Field(
+        None,
+        description="Global bounding box spanning the citations"
+    )
 
     citations: List[ProvenanceEntry] = Field(
         default_factory=list,

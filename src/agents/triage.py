@@ -10,10 +10,11 @@ Responsible for:
 
 import os
 import yaml
-from typing import Optional
+from typing import Optional, Tuple
 import pdfplumber
 
 from src.models.document_profile import DocumentProfile
+from src.agents.classifiers import KeywordDomainClassifier
 
 
 class TriageAgent:
@@ -21,28 +22,94 @@ class TriageAgent:
         # Load professional rules
         with open(config_path, "r", encoding="utf-8") as f:
             self.config = yaml.safe_load(f)
+        self.triage_config = self.config.get("triage", {})
+        self.origin_config = self.triage_config.get("origin", {})
+        self.layout_config = self.triage_config.get("layout", {})
         
-        # Keyword lists for domain detection (can be expanded in YAML later)
-        self.financial_keywords = ["revenue", "income", "balance sheet", "profit"]
-        self.legal_keywords = ["contract", "agreement", "plaintiff", "hereby"]
-        self.technical_keywords = ["algorithm", "performance", "implementation"]
-        self.medical_keywords = ["patient", "diagnosis", "treatment"]
+        domain_keywords = self.triage_config.get("domains", {
+            "financial": ["revenue", "income", "balance sheet", "profit"],
+            "legal": ["contract", "agreement", "plaintiff", "hereby"],
+            "technical": ["algorithm", "performance", "implementation"],
+            "medical": ["patient", "diagnosis", "treatment"]
+        })
+        self.domain_classifier = KeywordDomainClassifier(domain_keywords)
 
-    def classify_origin_type(self, file_path: str) -> str:
-        """Heuristic: mostly empty or image pages → scanned (Sampling first 10 pages)"""
+    def classify_origin_type(self, file_path: str) -> Tuple[str, float]:
+        """
+        Uses multiple signals: image area, interactive forms, text density, and font metadata
+        to classify origin as: scanned_image (zero-text), native_digital, mixed, or form_fillable.
+        """
         with pdfplumber.open(file_path) as pdf:
             pages = pdf.pages[:10]
-            total_scanned = 0
+            if not pages:
+                return "scanned_image", 1.0 # Empty pdf -> zero-text fallback
+                
+            total_chars = 0
+            scanned_pages = 0
+            form_fields = 0
+            embedded_fonts = set()
+            
+            # Check for interactive AcroForm widgets/fields
+            if pdf.doc.catalog.get("AcroForm"):
+                form_fields = 1 # Indicator present
+                
             for page in pages:
-                char_count = len(page.extract_text() or "")
-                if char_count < 50:
-                    total_scanned += 1
-            return "scanned_image" if total_scanned / len(pages) > 0.5 else "native_digital"
+                # 1. Text Density & Fonts
+                text = page.extract_text() or ""
+                char_count = len(text.strip())
+                total_chars += char_count
+                
+                # Check for fonts - if a page has text but no fonts, it might be rendered paths
+                if page.chars:
+                    embedded_fonts.update([char.get("fontname") for char in page.chars if char.get("fontname")])
+                
+                # 2. Image Area vs Page Area
+                page_area = page.width * page.height
+                image_area = sum((img["width"] * img["height"] for img in page.images), 0)
+                image_coverage_ratio = image_area / page_area if page_area > 0 else 0
+                
+                # Threshold from config or default to 0.8
+                img_coverage_threshold = self.origin_config.get("image_area_coverage_threshold", 0.8)
+                char_limit = self.origin_config.get("zero_text_char_limit", 50)
+                
+                if char_count < char_limit and image_coverage_ratio > img_coverage_threshold:
+                    scanned_pages += 1
+                elif char_count == 0 and not page.images:
+                    # Blank page counts towards scanned/needs vision (could be corrupt)
+                    scanned_pages += 0.5 
+                    
+            scanned_ratio = scanned_pages / len(pages)
+            scanned_threshold = self.origin_config.get("scanned_image_ratio_threshold", 0.5)
+            
+            # Explicit branching logic
+            if form_fields > 0:
+                return "form_fillable", 0.95
+            
+            # Zero-text explicit check across sampled pages
+            if total_chars < self.origin_config.get("zero_text_char_limit", 50) and len(embedded_fonts) == 0:
+                return "scanned_image", 0.99 # explicitly zero-text
+                
+            if scanned_ratio >= scanned_threshold:
+                # E.g if ratio is 0.7, confidence is higher than if it's 0.5
+                confidence = min(0.5 + (scanned_ratio - scanned_threshold), 0.95)
+                return "scanned_image", round(confidence, 2)
+            
+            if 0 < scanned_ratio < scanned_threshold:
+                # It's mixed! Has valid digital text on some pages, but full scanned images on others.
+                confidence = 0.6 + (scanned_ratio * 0.5)
+                return "mixed", round(confidence, 2)
+                
+            # It's native digital
+            confidence = 1.0 if len(embedded_fonts) > 0 else 0.8 # Higher confidence if we explicitly found fonts
+            return "native_digital", confidence
 
-    def classify_layout_complexity(self, file_path: str) -> str:
-        """Simple heuristic for tables vs figures vs single column (Sampling first 10 pages)"""
+    def classify_layout_complexity(self, file_path: str) -> Tuple[str, float]:
+        """Multi-signal heuristic for complex layouts."""
         with pdfplumber.open(file_path) as pdf:
             pages = pdf.pages[:10]
+            if not pages:
+                return "single_column", 1.0
+                
             table_pages = 0
             figure_pages = 0
             for page in pages:
@@ -50,35 +117,31 @@ class TriageAgent:
                     table_pages += 1
                 if page.images:
                     figure_pages += 1
+                    
             total_pages = len(pages)
-            if table_pages / total_pages > 0.3:
-                return "table_heavy"
-            elif figure_pages / total_pages > 0.3:
-                return "figure_heavy"
+            table_ratio = table_pages / total_pages
+            figure_ratio = figure_pages / total_pages
+            
+            table_threshold = self.layout_config.get("table_heavy_threshold", 0.3)
+            figure_threshold = self.layout_config.get("figure_heavy_threshold", 0.3)
+            
+            if table_ratio > table_threshold and figure_ratio > figure_threshold:
+                return "mixed", round(min(table_ratio + figure_ratio, 0.95), 2)
+            elif table_ratio > table_threshold:
+                return "table_heavy", round(min(0.5 + table_ratio, 0.95), 2)
+            elif figure_ratio > figure_threshold:
+                return "figure_heavy", round(min(0.5 + figure_ratio, 0.95), 2)
             else:
-                return "single_column"
+                return "single_column", 0.85
 
-    def detect_domain_hint(self, file_path: str) -> str:
-        """Keyword-based domain classification (Sampling first 10 pages)"""
+    def detect_domain_hint(self, file_path: str) -> Tuple[str, float]:
+        """Leverages the pluggable classifier for domain hints."""
         text_content = ""
         with pdfplumber.open(file_path) as pdf:
-            for page in pdf.pages[:10]:
+            for page in pdf.pages[:5]: # First 5 pages are usually enough for domain
                 text_content += page.extract_text() or ""
-        text_content_lower = text_content.lower()
-
-        for kw in self.financial_keywords:
-            if kw in text_content_lower:
-                return "financial"
-        for kw in self.legal_keywords:
-            if kw in text_content_lower:
-                return "legal"
-        for kw in self.technical_keywords:
-            if kw in text_content_lower:
-                return "technical"
-        for kw in self.medical_keywords:
-            if kw in text_content_lower:
-                return "medical"
-        return "general"
+                
+        return self.domain_classifier.classify_domain(text_content)
 
     def estimate_extraction_cost(self, origin_type: str, layout_complexity: str) -> str:
         """
@@ -104,9 +167,9 @@ class TriageAgent:
         if not doc_id:
             doc_id = os.path.basename(file_path).replace(".pdf", "")
 
-        origin_type = self.classify_origin_type(file_path)
-        layout_complexity = self.classify_layout_complexity(file_path)
-        domain_hint = self.detect_domain_hint(file_path)
+        origin_type, origin_conf = self.classify_origin_type(file_path)
+        layout_complexity, layout_conf = self.classify_layout_complexity(file_path)
+        domain_hint, domain_conf = self.detect_domain_hint(file_path)
         
         # New cost estimation based on rubric
         extraction_cost = self.estimate_extraction_cost(origin_type, layout_complexity)
@@ -114,10 +177,13 @@ class TriageAgent:
         return DocumentProfile(
             doc_id=doc_id,
             origin_type=origin_type,
+            origin_confidence=origin_conf,
             layout_complexity=layout_complexity,
+            layout_confidence=layout_conf,
             language="en",
             language_confidence=0.99,
             domain_hint=domain_hint,
+            domain_confidence=domain_conf,
             estimated_extraction_cost=extraction_cost
         )
 

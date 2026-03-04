@@ -11,7 +11,7 @@ import pdfplumber
 from typing import Optional
 from src.strategies.base import BaseExtractor
 from src.models.extracted_document import ExtractedDocument, TextBlock, TableBlock
-
+from src.models.common import BBox
 
 class FastTextExtractor(BaseExtractor):
     def __init__(self, min_char_count: int = 50, max_image_ratio: float = 0.5):
@@ -25,15 +25,34 @@ class FastTextExtractor(BaseExtractor):
 
     def compute_confidence(self, page) -> float:
         """
-        Confidence based on character count and image coverage
+        Confidence based on character count, image coverage, and font presence.
         """
-        char_count = len(page.extract_text() or "")
+        text = page.extract_text() or ""
+        char_count = len(text)
+        
+        # Check fonts - are these real text chars or just vector paths?
+        valid_font_chars = 0
+        total_page_chars = len(page.chars) if hasattr(page, 'chars') and page.chars else 0
+        
+        if total_page_chars > 0:
+            for char in page.chars:
+                if char.get("fontname"):
+                    valid_font_chars += 1
+                    
+            font_ratio = valid_font_chars / total_page_chars
+        else:
+            font_ratio = 1.0 if char_count == 0 else 0.5 # If no chars structure but it extracted text? Rare edge case
+            
         page_area = page.width * page.height
         image_area = sum((img["width"] * img["height"] for img in page.images), 0)
         image_ratio = image_area / page_area if page_area > 0 else 0
 
         # Confidence is 0–1
         char_conf = min(char_count / self.min_char_count, 1.0)
+        
+        # Multiply text confidence by font ratio (penalize vector paths masquerading as text)
+        char_conf = char_conf * font_ratio
+        
         image_conf = 1.0 if image_ratio <= self.max_image_ratio else max(0.0, 1 - (image_ratio - self.max_image_ratio))
         confidence = (char_conf + image_conf) / 2
         return confidence
@@ -59,7 +78,7 @@ class FastTextExtractor(BaseExtractor):
                         TextBlock(
                             content=text,
                             page=i,
-                            bbox=(0, 0, float(page.width), float(page.height))
+                            bbox=BBox(x0=0.0, y0=0.0, x1=float(page.width), y1=float(page.height))
                         )
                     )
 
@@ -75,7 +94,7 @@ class FastTextExtractor(BaseExtractor):
                                 headers=table_rows[0],
                                 rows=table_rows[1:],
                                 page=i,
-                                bbox=(0, 0, float(page.width), float(page.height))
+                                bbox=BBox(x0=0.0, y0=0.0, x1=float(page.width), y1=float(page.height))
                             )
                         )
 

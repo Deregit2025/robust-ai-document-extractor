@@ -5,8 +5,9 @@ Defines the hierarchical navigation structure
 built over a document for intelligent retrieval.
 """
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from typing import List, Optional
+from typing_extensions import Self
 
 
 class SectionNode(BaseModel):
@@ -38,6 +39,12 @@ class SectionNode(BaseModel):
         default_factory=list,
         description="Types of data in this section (tables, figures, equations, etc.)"
     )
+
+    @model_validator(mode='after')
+    def validate_pages(self) -> Self:
+        if self.page_end < self.page_start:
+            raise ValueError("page_end must be >= page_start")
+        return self
 
 
 class PageIndex(BaseModel):
