@@ -1,42 +1,68 @@
 # extraction_rules.yaml
-# Defines chunking, extraction thresholds, and strategy selection logic for documents
+# Professional Extraction Registry & Rubric Constraints
+
+metadata:
+  version: "1.2.0"
+  description: "Enterprise extraction rules for Robust AI Document Extractor"
+  last_updated: "2026-03-04"
 
 chunking:
-  method: semantic               # Options: semantic, fixed
+  method: semantic               # Options: semantic, fixed, experimental_layout_aware
   semantic:
-    max_tokens: 500              # Maximum tokens per chunk
-    min_tokens: 100              # Minimum tokens per chunk
-    overlap_tokens: 50           # Overlap between consecutive chunks
+    max_tokens: 512              # optimized for embedding models
+    min_tokens: 128              # avoid noisy chunks
+    overlap_tokens: 64           # context preservation
+    breakpoint_threshold: 0.8    # cosine distance threshold for semantic splits
   fixed:
-    page_window: 2               # Pages per chunk if using fixed
-    overlap_pages: 0             # Overlap if using fixed
+    page_window: 1               # pages per chunk
+    overlap_pages: 0
 
 strategy_tiers:
-  fast_text:
-    applicable_layouts:
-      - single_column
+  fast_text_sufficient:          # Tier A
+    provider: "pdfplumber"
+    model_id: "native_extractor"
+    applicable_layouts: ["single_column", "standard_report"]
+    confidence_threshold: 0.92
+    retry_strategy: "escalate_on_fail"
+    estimated_cost: 0.00
+  
+  needs_layout_model:            # Tier B
+    provider: "docling"
+    model_id: "layout_v3_balanced"
+    applicable_layouts: ["mixed_2col"]
+    confidence_threshold: 0.88
+    retry_strategy: "escalate_on_fail"
+    estimated_cost: 0.05
+  
+  needs_vision_model:            # Tier C (VLM)
+    provider: "openrouter"
+    model_id: "google/gemini-2.0-flash-001"
+    applicable_layouts: ["scanned_image", "complex_nested", "handwritten", "table_heavy", "figure_heavy"]
     confidence_threshold: 0.85
-    estimated_cost: low
-  layout_model:
-    applicable_layouts:
-      - table_heavy
-      - figure_heavy
-      - mixed
-    confidence_threshold: 0.9
-    estimated_cost: medium
-  vision_model:
-    applicable_layouts:
-      - scanned_image
-      - complex_mixed
-    confidence_threshold: 0.95
-    estimated_cost: high
+    retry_strategy: "human_in_the_loop"
+    estimated_cost: 0.15
 
 escalation:
-  # If extraction confidence below threshold, escalate to higher-tier strategy
   enable: true
-  max_attempts: 3
+  max_attempts: 2
   logging: true
+  fallback_strategy: "needs_vision_model"
+
+summarization:
+  cheap_model: "google/gemini-2.0-flash-lite-001"
+  max_length: 250
+  temperature: 0.3
+
+entities:
+  ner_strategy: "llm_extraction"
+  target_entities: ["ORGANIZATION", "PERSON", "DATE", "MONETARY_VALUE", "POLICY_NUM"]
+
+storage:
+  vector_store: "faiss_local"
+  fact_table: "jsonl_ledger"
+  audit_trail: true
 
 defaults:
   language: en
   domain_hint: general
+  strict_mode: true
