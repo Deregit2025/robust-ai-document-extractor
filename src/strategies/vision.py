@@ -1,104 +1,97 @@
 """
-VisionExtractor (Strategy C)
+VisionExtractor (Strategy C) - 100% Local Version
 
-- Uses Vision-Language Model (VLM) for scanned or low-confidence pages
-- Extracts text, tables, and figures from images
-- Normalizes output to ExtractedDocument
+- Uses Moondream (local VLM) via Ollama for zero-cost extraction.
+- Extracts text, tables, and figures from page images.
+- Normalizes output to ExtractedDocument.
 """
 
+import os
+import io
+import base64
+import json
+import pdfplumber
+from PIL import Image
+from typing import List, Optional
 from src.strategies.base import BaseExtractor
 from src.models.extracted_document import ExtractedDocument, TextBlock, TableBlock, FigureBlock
-import pdfplumber
-from typing import List
-from PIL import Image
-import io
-
-# OpenRouter stub for VLM
-try:
-    import openrouter
-except ImportError:
-    print("OpenRouter client not installed. Run `pip install openrouter`.")
+from src.utils.llm_utils import LLMUtils
 
 
 class VisionExtractor(BaseExtractor):
-    def __init__(self, model_name: str = "gpt-4o-mini:vision"):
+    def __init__(self, model_name: str = "moondream"):
         """
         Args:
-            model_name (str): VLM model name for extraction
+            model_name (str): Local Ollama model name (default: moondream)
         """
+        self.llm_utils = LLMUtils()
         self.model_name = model_name
-        # Example OpenRouter client initialization
-        # self.client = openrouter.Client(api_key="YOUR_API_KEY")
 
-    def extract(self, file_path: str) -> ExtractedDocument:
+    def _encode_image(self, image: Image.Image) -> str:
+        """Encode PIL Image to base64 string."""
+        buffered = io.BytesIO()
+        image.save(buffered, format="PNG")
+        return base64.encodebytes(buffered.getvalue()).decode("utf-8")
+
+    def extract(self, file_path: str, doc_id: Optional[str] = None) -> ExtractedDocument:
         """
-        Extract content from scanned PDF using VLM
+        Extract content from PDF using local VLM via Ollama (Moondream).
         """
         text_blocks: List[TextBlock] = []
         table_blocks: List[TableBlock] = []
         figure_blocks: List[FigureBlock] = []
+        
+        assigned_doc_id = doc_id or os.path.basename(file_path).replace(".pdf", "")
 
         with pdfplumber.open(file_path) as pdf:
-            for page_num, page in enumerate(pdf.pages, start=1):
+            total_pages = len(pdf.pages)
+            limit = 2  # Demo limit for speed and processing stability
+            print(f"Local Vision Extractor starting: {total_pages} pages. Processing first {limit} for demo.")
+            
+            for page_num, page in enumerate(pdf.pages[:limit], start=1):
+                print(f"  --> Processing page {page_num}/{limit} with local VLM (moondream)...")
+                
                 # Convert page to image
-                page_image = page.to_image(resolution=300).original
-                # Convert PIL Image to bytes
-                img_byte_arr = io.BytesIO()
-                page_image.save(img_byte_arr, format="PNG")
-                img_bytes = img_byte_arr.getvalue()
+                page_image = page.to_image(resolution=200).original
+                base64_image = self._encode_image(page_image)
 
-                # VLM API call (stub)
-                # Replace with actual call, e.g., self.client.predict(...)
-                # For demo, we simulate output
-                vlm_text = f"Extracted text from page {page_num} (simulated)"
-                vlm_tables = []  # Normally a list of extracted tables
-                vlm_figures = []  # Normally a list of figures with captions
-
-                # Build TextBlock
-                text_blocks.append(
-                    TextBlock(
-                        content=vlm_text,
-                        chunk_type="text",
-                        page_refs=[page_num],
-                        bounding_box=[0, 0, page.width, page.height],
-                    )
+                # Prompt for structured extraction
+                prompt = (
+                    "Describe this page in detail. "
+                    "Extract all visible text. "
+                    "Format any tables data clearly. "
+                    "Identify any figures or charts and provide short captions for them."
                 )
 
-                # Build TableBlocks
-                for table in vlm_tables:
-                    table_blocks.append(
-                        TableBlock(
-                            headers=table.get("headers", []),
-                            rows=table.get("rows", []),
-                            page_refs=[page_num],
-                            bounding_box=[0, 0, page.width, page.height],
+                try:
+                    # Generic local vision call (returns raw text description)
+                    raw_description = self.llm_utils.vision_completion(prompt, base64_image)
+                    
+                    # Since moondream doesn't guarantee JSON, we treat the whole 
+                    # description as a rich text block for RAG.
+                    text_blocks.append(
+                        TextBlock(
+                            content=raw_description,
+                            page=page_num,
+                            bbox=(0, 0, float(page.width), float(page.height)),
                         )
                     )
+                except Exception as e:
+                    print(f"Local VLM failure on page {page_num}: {e}")
+                    # If local vision fails, we let the exception bubble up to the router
+                    # so it can try FastText as a last resort.
+                    raise e
 
-                # Build FigureBlocks
-                for fig in vlm_figures:
-                    figure_blocks.append(
-                        FigureBlock(
-                            caption=fig.get("caption", ""),
-                            page_refs=[page_num],
-                            bounding_box=[0, 0, page.width, page.height],
-                        )
-                    )
-
-        # Log extraction
-        self.log_extraction(file_path, confidence=0.95, strategy_name="VisionExtractor")
+        # Log extraction success
+        self.log_extraction(file_path, confidence=0.85, strategy_name=f"VisionExtractor({self.model_name})")
 
         return ExtractedDocument(
+            doc_id=assigned_doc_id,
             text_blocks=text_blocks,
-            table_blocks=table_blocks,
-            figure_blocks=figure_blocks,
-            page_count=len(pdf.pages),
+            tables=table_blocks,
+            figures=figure_blocks,
+            total_pages=total_pages,
+            reading_order=list(range(len(text_blocks))),
+            strategy_name=f"VisionExtractor({self.model_name})",
+            confidence=0.85
         )
-
-
-# Quick test
-if __name__ == "__main__":
-    extractor = VisionExtractor()
-    doc_path = "../../data/raw/Audit_Report_-_2023.pdf"  # scanned PDF
-    extracted = extractor.extract(doc_path)
-    print(extracted)

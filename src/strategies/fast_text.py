@@ -6,8 +6,9 @@ FastTextExtractor (Strategy A)
 - Escalates if confidence < threshold
 """
 
-from typing import Optional
+import os
 import pdfplumber
+from typing import Optional
 from src.strategies.base import BaseExtractor
 from src.models.extracted_document import ExtractedDocument, TextBlock, TableBlock
 
@@ -37,10 +38,11 @@ class FastTextExtractor(BaseExtractor):
         confidence = (char_conf + image_conf) / 2
         return confidence
 
-    def extract(self, file_path: str) -> ExtractedDocument:
+    def extract(self, file_path: str, doc_id: Optional[str] = None) -> ExtractedDocument:
         """
         Extract text and tables as structured blocks
         """
+        assigned_doc_id = doc_id or os.path.basename(file_path).replace(".pdf", "")
         with pdfplumber.open(file_path) as pdf:
             text_blocks = []
             table_blocks = []
@@ -56,9 +58,8 @@ class FastTextExtractor(BaseExtractor):
                     text_blocks.append(
                         TextBlock(
                             content=text,
-                            chunk_type="text",
-                            page_refs=[i],
-                            bounding_box=[0, 0, page.width, page.height]
+                            page=i,
+                            bbox=(0, 0, float(page.width), float(page.height))
                         )
                     )
 
@@ -67,15 +68,16 @@ class FastTextExtractor(BaseExtractor):
                 for table in tables:
                     table_rows = []
                     for row in table.extract():
-                        table_rows.append(row)
-                    table_blocks.append(
-                        TableBlock(
-                            headers=table_rows[0] if table_rows else [],
-                            rows=table_rows[1:] if len(table_rows) > 1 else [],
-                            page_refs=[i],
-                            bounding_box=[0, 0, page.width, page.height]
+                        if row: table_rows.append([str(cell or "") for cell in row])
+                    if table_rows:
+                        table_blocks.append(
+                            TableBlock(
+                                headers=table_rows[0],
+                                rows=table_rows[1:],
+                                page=i,
+                                bbox=(0, 0, float(page.width), float(page.height))
+                            )
                         )
-                    )
 
         avg_confidence = sum(page_confidences) / len(page_confidences) if page_confidences else 0.0
 
@@ -83,16 +85,14 @@ class FastTextExtractor(BaseExtractor):
         self.log_extraction(file_path, confidence=avg_confidence, strategy_name="FastTextExtractor")
 
         return ExtractedDocument(
+            doc_id=assigned_doc_id,
             text_blocks=text_blocks,
-            table_blocks=table_blocks,
-            figure_blocks=[],  # FastText does not handle figures
-            page_count=len(pdf.pages)
+            tables=table_blocks,
+            figures=[],
+            total_pages=len(pdf.pages),
+            reading_order=list(range(len(text_blocks) + len(table_blocks))),
+            strategy_name="FastTextExtractor",
+            confidence=avg_confidence
         )
 
 
-# Quick test
-if __name__ == "__main__":
-    extractor = FastTextExtractor()
-    doc_path = "../../data/raw/CBE_ANNUAL_REPORT_2023_24.pdf"
-    extracted = extractor.extract(doc_path)
-    print(extracted)

@@ -31,20 +31,6 @@ class BaseExtractor(ABC):
     def log_extraction(self, file_path: str, confidence: float, strategy_name: str) -> None:
         """
         Optional utility to log extraction info in the ledger.
+        Silenced in favor of main.py's centralized and metadata-rich logging.
         """
-        from datetime import datetime
-        import json
-        import os
-
-        ledger_path = ".refinery/extraction_ledger.jsonl"
-        os.makedirs(os.path.dirname(ledger_path), exist_ok=True)
-
-        entry = {
-            "timestamp": datetime.utcnow().isoformat(),
-            "document": file_path,
-            "strategy_used": strategy_name,
-            "confidence_score": confidence
-        }
-
-        with open(ledger_path, "a", encoding="utf-8") as f:
-            f.write(json.dumps(entry) + "\n")
+        pass
