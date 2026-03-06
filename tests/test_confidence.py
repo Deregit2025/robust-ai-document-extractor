@@ -11,15 +11,24 @@ TEST_PDFS = [
     "tax_expenditure_ethiopia_2021_22.pdf"
 ]
 
+from src.agents.triage import TriageAgent
+from src.agents.extraction_router import ExtractionRouter
+
+@pytest.fixture
+def triage():
+    return TriageAgent()
+
 @pytest.fixture
 def router():
     return ExtractionRouter()
 
-def test_strategy_routing(router):
+def test_strategy_routing(router, triage):
     for pdf_file in TEST_PDFS:
         path = os.path.join(DATA_DIR, pdf_file)
-        result = router.process_document(path)
-        # Ensure result contains confidence keys and strategy info
-        assert "strategy_used" in result
-        assert "confidence_score" in result
-        assert 0.0 <= result["confidence_score"] <= 1.0
+        profile = triage.profile_document(path)
+        result = router.route_extraction(path, profile)
+        
+        # Ensure result contains confidence and strategy info
+        assert getattr(result, "strategy_name", None) is not None
+        assert getattr(result, "confidence", None) is not None
+        assert 0.0 <= result.confidence <= 1.0
