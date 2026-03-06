@@ -2,9 +2,15 @@
 # Professional Extraction Registry & Rubric Constraints
 
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   description: "Enterprise extraction rules for Robust AI Document Extractor"
-  last_updated: "2026-03-04"
+  last_updated: "2026-03-06"
+
+# Single source of truth for local model names.
+# LLMUtils reads these — do NOT hardcode model names in Python files.
+local_models:
+  text_model: "minimax-m2.5:cloud"   # Used for summaries, NER, and embeddings
+  vision_model: "moondream"           # Used for VLM page-image extraction
 
 chunking:
   method: semantic               # Options: semantic, fixed, experimental_layout_aware
@@ -35,15 +41,15 @@ strategy_tiers:
     applicable_layouts: ["mixed_2col"]
     confidence_threshold: 0.88
     retry_strategy: "escalate_on_fail"
-    estimated_cost: 0.05
+    estimated_cost: 0.00
   
-  needs_vision_model:            # Tier C (VLM)
-    provider: "openrouter"
-    model_id: "google/gemini-2.0-flash-001"
+  needs_vision_model:            # Tier C (local VLM via Ollama)
+    provider: "ollama"
+    model_id: "moondream"        # Resolved via local_models.vision_model
     applicable_layouts: ["scanned_image", "complex_nested", "handwritten", "table_heavy", "figure_heavy"]
     confidence_threshold: 0.85
     retry_strategy: "human_in_the_loop"
-    estimated_cost: 0.15
+    estimated_cost: 0.00        # 100% local — zero API cost
 
 escalation:
   enable: true
@@ -52,7 +58,7 @@ escalation:
   fallback_strategy: "needs_vision_model"
 
 summarization:
-  cheap_model: "google/gemini-2.0-flash-lite-001"
+  model: "minimax-m2.5:cloud"   # Resolved via local_models.text_model
   max_length: 250
   temperature: 0.3
 
