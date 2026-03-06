@@ -44,8 +44,16 @@ class LocalVectorStore:
                     except Exception:
                         continue
 
-    def add(self, vector: List[float], metadata: Dict[str, Any]):
-        """Adds a vector and its metadata to the FAISS store."""
+    def add(self, vector: List[float], metadata: Dict[str, Any], persist: bool = False):
+        """
+        Adds a vector and its metadata to the FAISS store.
+        
+        Args:
+            vector (List[float]): The embedding vector.
+            metadata (Dict[str, Any]): Metadata associated with the vector.
+            persist (bool): If True, immediately writes to disk. 
+                            Set to False (default) during batch indexing for speed.
+        """
         vec_np = np.array([vector]).astype("float32")
         
         # Normalize for cosine similarity (Inner Product on normalized vectors)
@@ -54,10 +62,17 @@ class LocalVectorStore:
         self.index.add(vec_np)
         self.metadata.append(metadata)
         
-        # Persist
+        if persist:
+            self.save()
+
+    def save(self):
+        """
+        Persists the current FAISS index and metadata to disk.
+        """
         faiss.write_index(self.index, self.index_path)
-        with open(self.metadata_path, "a", encoding="utf-8") as f:
-            f.write(json.dumps(metadata) + "\n")
+        with open(self.metadata_path, "w", encoding="utf-8") as f:
+            for item in self.metadata:
+                f.write(json.dumps(item) + "\n")
 
     def search(self, query_vector: List[float], k: int = 5) -> List[Dict[str, Any]]:
         """Performs semantic search using FAISS."""

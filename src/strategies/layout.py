@@ -1,6 +1,8 @@
 import os
 from typing import Optional
-from docling.document_converter import DocumentConverter
+from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.datamodel.base_models import InputFormat
+from docling.datamodel.pipeline_options import PdfPipelineOptions, RapidOcrOptions
 from src.models.extracted_document import (
     ExtractedDocument,
     TextBlock,
@@ -9,13 +11,45 @@ from src.models.extracted_document import (
 )
 from src.models.common import BBox
 
+
+def _safe_bbox(bbox) -> BBox:
+    """
+    Safely construct a BBox from a Docling bbox object.
+    Docling occasionally returns inverted coordinates (l > r or t > b)
+    on certain table cells and figures. We clamp them to ensure
+    x0 <= x1 and y0 <= y1 always holds, preventing Pydantic ValidationError.
+    """
+    if bbox is None:
+        return BBox(x0=0.0, y0=0.0, x1=0.0, y1=0.0)
+    l, t, r, b = float(bbox.l), float(bbox.t), float(bbox.r), float(bbox.b)
+    return BBox(
+        x0=min(l, r),
+        y0=min(t, b),
+        x1=max(l, r),
+        y1=max(t, b),
+    )
+
 class LayoutExtractor:
     """
     Layout-aware extraction using Docling via Python API.
     """
 
     def __init__(self):
-        self.converter = DocumentConverter()
+        # Configure memory-efficient pipeline options
+        options = PdfPipelineOptions()
+        options.do_ocr = False  # Disable OCR to avoid memory allocation for long reports
+        options.do_table_structure = True
+        
+        # Use RapidOCR with optimized settings for memory if needed
+        # (RapidOCR is generally lighter than Tesseract)
+        ocr_options = RapidOcrOptions()
+        options.ocr_options = ocr_options
+        
+        self.converter = DocumentConverter(
+            format_options={
+                InputFormat.PDF: PdfFormatOption(pipeline_options=options)
+            }
+        )
 
     def extract(
         self, pdf_path: str, doc_id: Optional[str] = None
@@ -45,7 +79,7 @@ class LayoutExtractor:
                     TextBlock(
                         content=item.text,
                         page=item.prov[0].page_no if item.prov else 1,
-                        bbox=BBox(x0=bbox.l, y0=bbox.t, x1=bbox.r, y1=bbox.b) if bbox else BBox(x0=0.0, y0=0.0, x1=0.0, y1=0.0),
+                        bbox=_safe_bbox(bbox),
                     )
                 )
                 reading_order.append(global_index)
@@ -82,7 +116,7 @@ class LayoutExtractor:
                         headers=headers,
                         rows=rows,
                         page=item.prov[0].page_no if item.prov else 1,
-                        bbox=BBox(x0=bbox.l, y0=bbox.t, x1=bbox.r, y1=bbox.b) if bbox else BBox(x0=0.0, y0=0.0, x1=0.0, y1=0.0),
+                        bbox=_safe_bbox(bbox),
                     )
                 )
                 reading_order.append(global_index)
@@ -93,11 +127,14 @@ class LayoutExtractor:
                     FigureBlock(
                         caption=getattr(item, "caption", None),
                         page=item.prov[0].page_no if item.prov else 1,
-                        bbox=BBox(x0=bbox.l, y0=bbox.t, x1=bbox.r, y1=bbox.b) if bbox else BBox(x0=0.0, y0=0.0, x1=0.0, y1=0.0),
+                        bbox=_safe_bbox(bbox),
                     )
                 )
                 reading_order.append(global_index)
                 global_index += 1
+
+        # Use actual page count from docling rather than inferring from extracted blocks
+        actual_pages = len(doc.pages) if hasattr(doc, 'pages') else max([tb.page for tb in text_blocks] + [1])
 
         return ExtractedDocument(
             doc_id=doc_id or pdf_path.split("/")[-1],
@@ -105,7 +142,7 @@ class LayoutExtractor:
             tables=tables,
             figures=figures,
             reading_order=reading_order,
-            total_pages=max([tb.page for tb in text_blocks] + [1]),
+            total_pages=actual_pages,
             strategy_name="LayoutExtractor",
             confidence=0.88
         )

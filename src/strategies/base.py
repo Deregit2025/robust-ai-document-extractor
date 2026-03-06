@@ -15,13 +15,14 @@ class BaseExtractor(ABC):
     """
 
     @abstractmethod
-    def extract(self, file_path: str) -> ExtractedDocument:
+    def extract(self, file_path: str, doc_id: str = None) -> ExtractedDocument:
         """
         Extracts structured content from a document and returns
         an ExtractedDocument instance.
 
         Args:
             file_path (str): Path to the input PDF
+            doc_id (str, optional): Document identifier. Derived from filename if not provided.
 
         Returns:
             ExtractedDocument: Normalized extraction output

@@ -69,11 +69,7 @@ class ExtractionRouter:
             
             try:
                 print(f"[ROUTER] Attempting extraction with {tier_name} strategy.")
-                # We normalize args because Layout/Vision take doc_id
-                if tier_name == "fast_text_sufficient":
-                    extracted_doc = extractor.extract(doc_path)
-                else:
-                    extracted_doc = extractor.extract(doc_path, doc_id)
+                extracted_doc = extractor.extract(doc_path, doc_id)
                 
                 # Check confidence
                 confidence = extracted_doc.confidence or 0.0
@@ -89,6 +85,18 @@ class ExtractionRouter:
             except Exception as e:
                 print(f"[ROUTER] Strategy {tier_name} crashed for {doc_id}: {e}")
                 escalation_history.append(f"{tier_name} (Failed: {str(e)})")
+                
+                # SPECIAL CASE: if we hit a memory error (like std::bad_alloc on huge PDFs), 
+                # try the lightweight FastText as a rescue fallback.
+                if "bad_alloc" in str(e).lower() and tier_name != "fast_text_sufficient":
+                    print(f"[ROUTER RESCUE] Attempting lightweight FastText rescue for {doc_id} due to memory exhaustion.")
+                    try:
+                        extracted_doc = self.fast_text.extract(doc_path, doc_id)
+                        extracted_doc.escalation_history = escalation_history + ["Memory-Safe Rescue"]
+                        extracted_doc.confidence = 0.5 # Lower confidence due to rescue
+                        return extracted_doc
+                    except Exception:
+                        pass
                 
         # If we exhausted the cascade without hitting the threshold
         print(f"[ROUTER CRITICAL] All cascading strategies exhausted or failed for {doc_id}.")

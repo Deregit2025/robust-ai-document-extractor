@@ -138,6 +138,8 @@ class ChunkingEngine:
                     cross_refs=_extract_cross_refs(combined),
                 )
                 violations = self.validator.validate(ldu)
+                if violations:
+                    print(f"[CHUNKER WARN] doc_id='{doc.doc_id}' -> {', '.join(violations)}")
                 ldus.append(ldu)
             pending_list_items.clear()
 
@@ -154,7 +156,9 @@ class ChunkingEngine:
                 content_hash=self._generate_hash(tb.content),
                 cross_refs=cross_refs,
             )
-            self.validator.validate(ldu)
+            violations = self.validator.validate(ldu)
+            if violations:
+                print(f"[CHUNKER WARN] doc_id='{doc.doc_id}' -> {', '.join(violations)}")
             ldus.append(ldu)
 
         for tb in doc.text_blocks:
@@ -199,7 +203,9 @@ class ChunkingEngine:
                 headers=tbl.headers,
                 cross_refs=[],
             )
-            self.validator.validate(ldu)
+            violations = self.validator.validate(ldu)
+            if violations:
+                print(f"[CHUNKER WARN] doc_id='{doc.doc_id}' -> {', '.join(violations)}")
             ldus.append(ldu)
 
         # ── Phase C: Process Figure Blocks (Rule 2) ──────────────────────────
@@ -218,7 +224,9 @@ class ChunkingEngine:
                 caption=fig.caption,   # Rule 2: explicit metadata field
                 cross_refs=[],
             )
-            self.validator.validate(ldu)
+            violations = self.validator.validate(ldu)
+            if violations:
+                print(f"[CHUNKER WARN] doc_id='{doc.doc_id}' -> {', '.join(violations)}")
             ldus.append(ldu)
 
         return ldus

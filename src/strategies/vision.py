@@ -107,8 +107,20 @@ class VisionExtractor(BaseExtractor):
                     print(f"Failed to process page {page_num} after {self.max_retries} attempts. Skipping page.")
                     # We log the warning but do not crash the entire extraction run, preserving partial data.
 
+        # Evaluate extraction quality
+        # moondream sometimes returns very short descriptions instead of full OCR.
+        # If the average extracted text length is suspiciously low for the pages processed,
+        # we tank the confidence score so the document is flagged for human review.
+        processed_pages = len(text_blocks)
+        if processed_pages > 0:
+            avg_length = sum(len(tb.content) for tb in text_blocks) / processed_pages
+            # If average text per page is less than 50 characters, it's likely a descriptive failure
+            final_confidence = 0.85 if avg_length >= 50 else 0.40
+        else:
+            final_confidence = 0.0
+
         # Log extraction success
-        self.log_extraction(file_path, confidence=0.85, strategy_name=f"VisionExtractor({self.model_name})")
+        self.log_extraction(file_path, confidence=final_confidence, strategy_name=f"VisionExtractor({self.model_name})")
 
         return ExtractedDocument(
             doc_id=assigned_doc_id,
@@ -118,5 +130,5 @@ class VisionExtractor(BaseExtractor):
             total_pages=total_pages,
             reading_order=list(range(len(text_blocks))),
             strategy_name=f"VisionExtractor({self.model_name})",
-            confidence=0.85
+            confidence=final_confidence
         )

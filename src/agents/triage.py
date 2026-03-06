@@ -146,18 +146,28 @@ class TriageAgent:
     def estimate_extraction_cost(self, origin_type: str, layout_complexity: str) -> str:
         """
         Maps origin + layout to extraction tier based on professional rules.
+        Uses explicit origin checks before layout rules to avoid accidental
+        membership matches on shared string values (BUG-06 / BUG-07 fix).
         """
-        # Follow Tier C: Vision Model for scanned images
-        vision_rules = self.config["strategy_tiers"]["needs_vision_model"]["applicable_layouts"]
-        if origin_type in vision_rules or layout_complexity in vision_rules:
+        # Tier C: Any scanned or form document goes directly to Vision
+        if origin_type == "scanned_image":
             return "needs_vision_model"
-        
-        # Follow Tier B: Layout Model for complex digital layouts
+
+        # Tier C: Mixed documents have scanned pages — Vision can handle both
+        if origin_type == "mixed":
+            return "needs_layout_model"  # Layout first; Vision is fallback via escalation
+
+        # Tier C: Complex layout types from the config always need Vision
+        vision_layout_rules = self.config["strategy_tiers"]["needs_vision_model"]["applicable_layouts"]
+        if layout_complexity in vision_layout_rules:
+            return "needs_vision_model"
+
+        # Tier B: Layout model for structured digital layouts
         layout_rules = self.config["strategy_tiers"]["needs_layout_model"]["applicable_layouts"]
         if layout_complexity in layout_rules:
             return "needs_layout_model"
-            
-        # Default to Tier A: Fast Text
+
+        # Default Tier A: Fast Text for simple native digital docs
         return "fast_text_sufficient"
 
     def profile_document(self, file_path: str, doc_id: Optional[str] = None) -> DocumentProfile:

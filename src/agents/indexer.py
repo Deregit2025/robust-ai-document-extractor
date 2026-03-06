@@ -15,52 +15,57 @@ class PageIndexBuilder:
     def build(self, ldus: List[LDU], doc_id: str) -> PageIndex:
         """
         Build PageIndex tree from LDUs with LLM-enhanced metadata.
+        Optimized to avoid calling LLM for every atomic chunk.
         """
         nodes: List[SectionNode] = []
         
+        # We only summarize "Headings", "Tables", or "Figures" to save time
+        # Standard text chunks just get a generic summary or are skipped for indexing.
         for idx, ldu in enumerate(ldus):
-            # 1. Professional Summary Prompt
-            summary_prompt = (
-                "You are an expert document analyst. Provide a concise, 2-3 sentence technical summary "
-                "of the following document chunk. Focus on the core message and key data points.\n\n"
-                f"Content: {ldu.content}"
-            )
-            summary = self.llm.completions([{"role": "user", "content": summary_prompt}])
+            # 1. Determine importance (Strict: Only tables, figures, or the very first chunk)
+            is_important = ldu.chunk_type in ("table", "figure") or idx == 0
             
-            # 2. Robust Entity Extraction (Schema-driven)
-            entity_prompt = (
-                "Identify and extract all key entities from the text segment below. "
-                "Classify them into: ORGANIZATION, PERSON, DATE, MONETARY_VALUE, or POLICY_NUM. "
-                "Return only a valid JSON object with the key 'entities' containing a list of strings."
-            )
-            try:
-                entity_resp = self.llm.completions(
-                    [{"role": "system", "content": "You are a legal/financial extraction agent. Output strictly JSON."},
-                     {"role": "user", "content": f"{entity_prompt}\nText: {ldu.content}"}],
-                    json_mode=True
-                )
-                raw_json = json.loads(entity_resp)
-                entities = raw_json.get("entities", [])
-                if not entities and isinstance(raw_json, list):
-                    entities = raw_json
-                # Cleanup: ensure it's a list of strings
-                entities = [str(e) for e in entities][:10] # Cap for efficiency
-            except Exception:
-                entities = ["NER_UNAVAILABLE"]
+            summary = "Text content segment."
+            entities = []
 
-            # 3. Build Section Node
-            node = SectionNode(
-                title=f"{ldu.chunk_type.upper()} SECTION {idx+1}",
-                page_start=min(ldu.page_refs),
-                page_end=max(ldu.page_refs),
-                child_sections=[],
-                key_entities=entities,
-                summary=summary,
-                data_types_present=[ldu.chunk_type],
-            )
-            nodes.append(node)
-            
-            # 4. Storage Integration
+            if is_important:
+                # Summarize only structural anchors or visuals
+                summary_prompt = (
+                    f"Briefly summarize this {'table' if ldu.chunk_type == 'table' else 'segment'}: "
+                    f"{ldu.content[:1000]}"
+                )
+                try:
+                    summary = self.llm.completions([{"role": "user", "content": summary_prompt}])
+                except Exception:
+                    summary = "Summary unavailable"
+
+                # Limited entity extraction for speed
+                if idx == 0:
+                    try:
+                        entity_resp = self.llm.completions(
+                            [{"role": "user", "content": f"Extract ORGANIZATION and DATE from: {ldu.content[:500]}"}],
+                            json_mode=True
+                        )
+                        raw_entities = json.loads(entity_resp).get("entities", [])
+                        entities = [str(e) for e in raw_entities][:5]
+                    except Exception:
+                        entities = []
+
+            # 2. Add to Index if it represents a structural node
+            if is_important or idx == 0:
+                section_title = ldu.parent_section if ldu.parent_section else f"DOCUMENT SEGMENT {idx+1}"
+                node = SectionNode(
+                    title=section_title,
+                    page_start=min(ldu.page_refs),
+                    page_end=max(ldu.page_refs),
+                    child_sections=[],
+                    key_entities=entities,
+                    summary=summary,
+                    data_types_present=[ldu.chunk_type],
+                )
+                nodes.append(node)
+
+            # 3. Always add to Vector Store for RAG (this is metadata-only, no LLM call)
             vector = self.llm.get_embeddings(ldu.content)
             self.vector_store.add(
                 vector=vector,
@@ -68,10 +73,13 @@ class PageIndexBuilder:
                     "doc_id": doc_id,
                     "content_hash": ldu.content_hash,
                     "chunk_type": ldu.chunk_type,
-                    "summary": summary,
-                    "entities": entities
+                    "page_refs": ldu.page_refs,
+                    "parent_section": ldu.parent_section,
                 }
             )
+
+        # Save vector store to disk once after all LDUs are processed
+        self.vector_store.save()
 
         # 5. Persist the full LDU facts for auditability
         self.fact_table.append_ldus(ldus)
