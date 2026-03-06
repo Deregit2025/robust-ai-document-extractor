@@ -22,34 +22,41 @@ class PageIndexBuilder:
         # We only summarize "Headings", "Tables", or "Figures" to save time
         # Standard text chunks just get a generic summary or are skipped for indexing.
         for idx, ldu in enumerate(ldus):
-            # 1. Determine importance (Strict: Only tables, figures, or the very first chunk)
-            is_important = ldu.chunk_type in ("table", "figure") or idx == 0
+            # 1. Determine importance (Is it a heading or a visual element?)
+            is_important = ldu.chunk_type in ("table", "figure") or (ldu.chunk_type == "text" and ldu.parent_section is None)
             
-            summary = "Text content segment."
+            summary = "Generic content segment."
             entities = []
 
             if is_important:
-                # Summarize only structural anchors or visuals
+                # Summarize only important structural anchors
                 summary_prompt = (
-                    f"Briefly summarize this {'table' if ldu.chunk_type == 'table' else 'segment'}: "
-                    f"{ldu.content[:1000]}"
+                    "Provide a 1-sentence technical summary of the following doc segment. "
+                    f"Content: {ldu.content[:1000]}"
                 )
                 try:
                     summary = self.llm.completions([{"role": "user", "content": summary_prompt}])
                 except Exception:
                     summary = "Summary unavailable"
 
-                # Limited entity extraction for speed
-                if idx == 0:
-                    try:
-                        entity_resp = self.llm.completions(
-                            [{"role": "user", "content": f"Extract ORGANIZATION and DATE from: {ldu.content[:500]}"}],
-                            json_mode=True
-                        )
-                        raw_entities = json.loads(entity_resp).get("entities", [])
-                        entities = [str(e) for e in raw_entities][:5]
-                    except Exception:
-                        entities = []
+                # Extract entities only for anchors
+                entity_prompt = "Extract ORGANIZATION and DATE from this text. Respond in JSON: {'entities': []}"
+                try:
+                    entity_resp = self.llm.completions(
+                        [{"role": "user", "content": f"{entity_prompt}\nText: {ldu.content[:500]}"}],
+                        json_mode=True
+                    )
+                    raw_entities = json.loads(entity_resp).get("entities", [])
+                    # Ensure all entities are strings (handles cases where LLM returns dicts)
+                    entities = []
+                    for e in raw_entities:
+                        if isinstance(e, dict):
+                            entities.append(f"{e.get('type', 'ENTITY')}: {e.get('value', 'UNKNOWN')}")
+                        else:
+                            entities.append(str(e))
+                    entities = entities[:10]
+                except Exception:
+                    entities = []
 
             # 2. Add to Index if it represents a structural node
             if is_important or idx == 0:
