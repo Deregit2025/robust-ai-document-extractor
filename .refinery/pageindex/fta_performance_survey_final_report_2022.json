@@ -1,0 +1,1807 @@
+{
+  "doc_id": "fta_performance_survey_final_report_2022",
+  "root_sections": [
+    {
+      "title": "DOCUMENT SEGMENT 1",
+      "page_start": 1,
+      "page_end": 1,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Finance (MoF)",
+        "ORGANIZATION: TAK-Innovative Research and Development Institute PLC (TAK-IRDI)",
+        "DATE: August 2022"
+      ],
+      "summary": "The final report provides a technical assessment of Ethiopia’s Financial Transparency and Accountability (FTA) implementation, evaluating compliance, reporting mechanisms, oversight structures, and delivering recommendations to enhance transparency and accountability in public financial management.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 2",
+      "page_start": 2,
+      "page_end": 2,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "This segment is the front‑matter and table of contents of a technical report, listing the list of figures, list of tables, acknowledgements, acronyms, executive summary, and the introductory section with background.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 3",
+      "page_start": 3,
+      "page_end": 3,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The section assesses stakeholder engagement and federal‑budgetary implementation challenges while presenting empirical data on FTA initiative effectiveness, including respondent demographics, citizen awareness and understanding, budget‑information access, local‑government participation, and transparency and accountability in basic‑service delivery.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 4",
+      "page_start": 4,
+      "page_end": 4,
+      "child_sections": [],
+      "key_entities": [
+        "DATE: 2014"
+      ],
+      "summary": "The List of Figures comprises eight figures that present quantitative and qualitative data on the rollout of FTA‑related initiatives in Ethiopian woredas—specifically the extent of awareness‑raising training, BLT training‑of‑trainers, BLT provision versus the 2014 budget plan, sex and education profiles of BLT participants, the topics covered in BLT, and the proportion of woredas that posted budget information.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 5",
+      "page_start": 5,
+      "page_end": 5,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Figures 36‑43 present descriptive survey statistics on citizen awareness and comprehension of the FTA initiative and local government budget/expenditure, documenting trends over time, regional variations, socio‑demographic determinants, information sources, and participation rates in the BLT program.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 6",
+      "page_start": 6,
+      "page_end": 6,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Figure 70 presents a five‑year community‑assessment trend of the grievance‑handling system, while the subsequent List of Tables summarizes the study’s methodological variables—sample distribution, key‑informant interview design, frequency of information provision, and determinants of local‑government transparency.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 7",
+      "page_start": 7,
+      "page_end": 7,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Public Expenditure Management Reform Directorate/Ministry of Finance",
+        "ORGANIZATION: TAK-Innovative Research and Development Institute",
+        "ORGANIZATION: Ministry of Finance",
+        "DATE: July 2022"
+      ],
+      "summary": "The acknowledgments credit the core drafting team, the Public Expenditure Management Reform Directorate/Ministry of Finance, participants of the July 2022 validation workshop, reviewers from the Ministry of Finance, regional bureaus, and the World Bank, as well as government officials, community members, and CSO representatives who provided input through interviews.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 8",
+      "page_start": 8,
+      "page_end": 8,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: BoFED",
+        "ORGANIZATION: CSA",
+        "ORGANIZATION: CSOs",
+        "ORGANIZATION: GoE"
+      ],
+      "summary": "This segment presents a standardized glossary of acronyms defining Ethiopian government ministries, development partners, project titles, financial and monitoring‑evaluation tools, and social‑accountability methods referenced throughout the document.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 9",
+      "page_start": 9,
+      "page_end": 9,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Protection of Basic Services program",
+        "ORGANIZATION: Enhancing Shared Prosperity through Equitable Services (ESPES)",
+        "DATE: 2006",
+        "DATE: 2015"
+      ],
+      "summary": "The ESPES program, the 2015 iteration of Ethiopia’s Protection of Basic Services (initiated in 2006), aims to improve equitable access to basic services and strengthen decentralized accountability by embedding Financial Transparency and Accountability, Social Accountability, and Grievance Redress Mechanism sub‑components that enhance transparency and accountability in public budget preparation, allocation, execution, and auditing across federal, regional, and city administration levels.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 10",
+      "page_start": 10,
+      "page_end": 10,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: federal",
+        "ORGANIZATION: regional",
+        "ORGANIZATION: woreda",
+        "ORGANIZATION: kebele"
+      ],
+      "summary": "The assessment combined qualitative and quantitative methods using multi‑stage random cluster sampling to survey 39 federal institutions, 10 regions, 2 city administrations, 139 woredas, 417 kebeles and 6,255 households, gathering in‑depth key‑informant interviews, focus group discussions, structured household questionnaires and document reviews, and analyzed the data with descriptive statistics, regression modeling and content analysis.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 11",
+      "page_start": 11,
+      "page_end": 11,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: federal institutions"
+      ],
+      "summary": "The audit shows that only 36 % of federal institutions are aware of the initiative, roughly a quarter engage stakeholders in budgeting, while 72 % publish budget/expenditure data but rarely disclose procurement or audit information, leading to inadequate capture of citizen priorities due to unclear stakeholder definitions, low prioritization of FTA activities, lack of FTA awareness, and inconsistent assignment of responsible personnel.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 12",
+      "page_start": 12,
+      "page_end": 12,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The analysis shows that easy‑to‑understand budget information enhances citizen comprehension, participation and government accountability, as reflected in a more than five‑fold rise in the proportion of residents meeting local officials from 9 % in 2009 to 50 % in 2022 and 56 % of respondents reporting active involvement in budget planning despite recent shocks.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 13",
+      "page_start": 13,
+      "page_end": 13,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: PBS II",
+        "ORGANIZATION: PBS III",
+        "ORGANIZATION: ESPES"
+      ],
+      "summary": "The evaluation shows a steady improvement in quality of life and satisfaction with essential services (education, health, agriculture, water) across PBS II, III, and ESPES, with local government transparency positively driven by higher proportions of self‑employed households, greater average income, female leadership, literacy, more frequent contact with officials, closer proximity to courts, and greater staff professionalism, while highlighting the critical need for gender‑disaggregated data to identify and address gender‑specific challenges.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 14",
+      "page_start": 14,
+      "page_end": 14,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The evaluation shows that linkage strength is moderate in most woredas (54 %) and only half have jointly assessed linkages, the FTA initiative lacks a dedicated logframe with a clear theory of change causing M&E confusion, yet recent data indicate that prior evaluation recommendations—such as increasing BLT training—are being implemented with a rising number of beneficiaries.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 15",
+      "page_start": 15,
+      "page_end": 15,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: PBSs",
+        "ORGANIZATION: ESPES programs",
+        "DATE: 2016"
+      ],
+      "summary": "The segment notes that while prior PBS and ESPES investments raised overall quality‑of‑life satisfaction, recent citizen engagement and service‑delivery satisfaction have fallen due to political instability, conflict, and COVID‑19, and it recommends strengthening FTA implementation through expanded budgetary transparency, community participation in review meetings, public awareness of budget usage, and disclosure of procurement and audit information.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 16",
+      "page_start": 16,
+      "page_end": 16,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The document stresses strengthening women’s engagement in budget information, awareness, pre‑budget discussions, and BLT training while highlighting the need for additional resources to offset pandemic‑driven disruptions and restore gains in local‑government accountability and transparency.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 18",
+      "page_start": 18,
+      "page_end": 18,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The Constitution mandates transparency and accountability (Arts. 12:1‑2), creating a legal‑regulatory framework for public financial governance that underpins a comprehensive Public Financial Management reform program launched in the mid‑1990s to improve the efficiency, effectiveness and oversight of public spending.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 19",
+      "page_start": 19,
+      "page_end": 19,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: PBS",
+        "ORGANIZATION: ESPES",
+        "ORGANIZATION: ESPES-AF",
+        "DATE: 2015"
+      ],
+      "summary": "The PBS was succeeded by the ESPES program and its Additional Financing (ESPES‑AF), a decentralized basic‑services framework launched in 2015 that replaces the PBS block‑grant, focuses on equity and capacity building at the woreda level, and strengthens accountability through public‑finance‑management capacity development and citizen‑engagement sub‑components that include financial transparency and accountability.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 20",
+      "page_start": 20,
+      "page_end": 20,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The assessment is an independent, systematic evaluation of the Ethiopia FTA initiative’s effectiveness and impact, using a comparative analysis of current implementation status against baseline and prior performance data to review federal and sub‑national progress, gauge citizens’ understanding of and participation in public budget processes, and derive lessons to inform future strategic direction.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 21",
+      "page_start": 21,
+      "page_end": 21,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The study assesses the effectiveness of pre‑budget discussion mechanisms and citizen participation in budget prioritization and allocation, evaluates how social‑accountability, fiscal‑transparency, and grievance‑redress linkages can be strengthened, and investigates the economic, social, and institutional determinants of local‑government transparency across Ethiopia’s federal, regional, and woreda levels.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 22",
+      "page_start": 22,
+      "page_end": 22,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: MoFED",
+        "ORGANIZATION: Protection of Basic Services (PBS)",
+        "ORGANIZATION: Ethiopia",
+        "DATE: 2009",
+        "DATE: 2006"
+      ],
+      "summary": "Since 2006 Ethiopia has been implementing the Protection of Basic Services (PBS) program—funded by the government and development partners—which channels block‑grant transfers to sub‑national authorities to expand and improve basic service delivery in education, health, agriculture, water, sanitation, and rural roads while strengthening transparency and local accountability.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 23",
+      "page_start": 23,
+      "page_end": 23,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The project integrates a Grievance Redress Mechanism (GRM) with a Financial Transparency and Accountability (FTA) initiative—operational since 2015 and expanded with 2017 financing—to enhance public‑budget transparency and accountability across Federal, Regional/city, and Woreda administration levels by deploying budget and expenditure templates, budget‑literacy training manuals, procurement and audit templates, media disclosure, and pre‑budget discussions, thereby strengthening system capacity and enabling effective local service delivery.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 24",
+      "page_start": 24,
+      "page_end": 24,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The FTA logical framework defines a causal chain linking inputs (pre‑budget discussion tools, guidelines, directives, budget‑literacy training, and public budget information) through outputs (accessible budget disclosures and capacity‑building activities) to outcomes (greater transparency and accountability in budget processes at federal, regional/city, and woreda administration levels) and ultimately to impacts (improved basic service delivery and enhanced quality of life for citizens).",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 25",
+      "page_start": 25,
+      "page_end": 25,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: FTA",
+        "ORGANIZATION: MoF",
+        "DATE: 2006",
+        "DATE: 2009",
+        "DATE: 2012",
+        "DATE: 2013",
+        "DATE: 2016"
+      ],
+      "summary": "The FTA initiative, initiated in 2006, has conducted a 2009 baseline and three follow‑up assessments (2012, 2013, 2016) that consistently reveal limited citizen knowledge of budget processes and minimal engagement in service‑delivery decisions, while identifying water and health services as top priorities and rating road and waste‑management services as the lowest‑quality basic services.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 26",
+      "page_start": 26,
+      "page_end": 26,
+      "child_sections": [],
+      "key_entities": [
+        "DATE: 2013",
+        "DATE: 2013"
+      ],
+      "summary": "The 2013 assessment revealed limited FTA training coverage (≈20 % of respondents), with three‑quarters rating quality of life as average or above yet two‑thirds expressing dissatisfaction with local services, and the 2016 impact evaluation reported improvements in citizen participation, basic‑service satisfaction, and budget‑process awareness compared to 2013.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 27",
+      "page_start": 27,
+      "page_end": 27,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "A mixed‑methods assessment employing structured and semi‑structured surveys and focus‑group discussions across 139 woredas of 10 regions and two city administrations, covering 39 federal institutions, was conducted using a multi‑stage random cluster sample drawn from the 2009/2016 baseline frame, with quantitative data analysed via descriptive and regression methods and qualitative data via content analysis.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 28",
+      "page_start": 28,
+      "page_end": 28,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: MoFEC",
+        "DATE: June 2009"
+      ],
+      "summary": "The segment lists regional participant or response counts (Sidama 225, Somali 540, Addis Ababa 765, total 6,255) across nine Ethiopian regions and describes a mixed‑method data‑collection approach—combining primary and secondary data through document review of MoFEC surveys, follow‑up studies, prototype design guidelines, and media‑disclosure strategies.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 29",
+      "page_start": 29,
+      "page_end": 29,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: የገንዘብና ኢኮኖሚ ልማት ሚኒስቴር",
+        "DATE: ታህሳስ 2008",
+        "ORGANIZATION: የገንዘብና ኢኮኖሚ ልማት ሚኒስስትር",
+        "DATE: ነሐሴ 2001",
+        "ORGANIZATION: የወረዳ ገንዘብና ኢኮኖሚ ልማት ጽ/ቤቶች",
+        "ORGANIZATION: የገንዘብና ኢኮኖሚ ልማት ሚኒስስትር",
+        "DATE: መስከረም 2009"
+      ],
+      "summary": "The segment summarizes a series of budget‑transparency and fiscal‑reform guidelines and reports that the assessment was based on a household survey of 6,255 respondents using a structured questionnaire (with additional questions for emerging issues) together with key‑informant interviews conducted at federal, regional, woreda and kebele levels.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 30",
+      "page_start": 30,
+      "page_end": 30,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The study conducted one focus‑group discussion per kebele with community leaders, CBO representatives, women’s groups and other knowledgeable informants, and analysed the data using descriptive statistics, trend analysis of 2009, 2013 and 2016 surveys, econometric determinant analysis of socioeconomic and institutional factors influencing local‑government transparency, and importance‑performance analysis of citizen satisfaction with basic service delivery.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 31",
+      "page_start": 31,
+      "page_end": 31,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The main limitation is an attribution problem arising from the FTA being implemented nationwide, which precludes a control group and thus prevents establishing a counterfactual, so while the assessment uses baseline and prior period comparisons to partially address this, causal inference remains limited and results must be interpreted with caution.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 33",
+      "page_start": 33,
+      "page_end": 33,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Afar",
+        "ORGANIZATION: Somali",
+        "ORGANIZATION: Amhara",
+        "ORGANIZATION: Benishangul Gumuz",
+        "ORGANIZATION: Harrari",
+        "ORGANIZATION: Gambella"
+      ],
+      "summary": "The assessment indicates that awareness‑enhancing training coverage is moderate overall, with notably low coverage in Benishangul‑Gumuz (only 33 % of woredas) and insufficient data for Harrari and Gambella, while Budget Literacy Training of trainers was provided in 65 % of the visited woredas during the 2021/22 fiscal year.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 34",
+      "page_start": 34,
+      "page_end": 34,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Benishangul-Gumuz",
+        "DATE: 2014"
+      ],
+      "summary": "The audit shows that woredas that did not deliver awareness‑enhancing training also failed to provide budget literacy training (BLT), resulting in an overall 69 % achievement of the 2014 Ethiopia budget‑year target—sub‑national achievement ranges from 79 % in Somali and SNNPR down to 51 % in Benishangul‑Gumuz, with performance below the national average in developing regions such as Benishangul‑Gumuz and Gambella.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 35",
+      "page_start": 35,
+      "page_end": 35,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The BLT program achieved a gender‑disaggregated participation rate of 56 % male and 44 % female, showing encouraging progress toward gender parity while underscoring the need to further increase female involvement to align with Ethiopia’s nearly equal male‑to‑female population ratio.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 36",
+      "page_start": 36,
+      "page_end": 36,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The BLT training participants are predominantly primary‑educated (51%) and include a substantial proportion with no education (35%, well above the national average of 46%), indicating a need for more inclusive curriculum design, while the training widely covers budget sources (77% of woredas), purpose (71%), and the processes and timing of citizen participation.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 37",
+      "page_start": 37,
+      "page_end": 37,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Over 90 % of the surveyed woredas disclosed the required budgetary information (budget, performance reports, procurement, audit findings, and service standards), with all regions meeting higher compliance levels except Benishangul Gumuz, which shows only moderate performance.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 38",
+      "page_start": 38,
+      "page_end": 38,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Analysis of the visited woredas shows that budget and expenditure information is publicly posted by 74% of them and service‑delivery standards by 66%, whereas audit findings and procurement processes are the least accessible, indicating that local governments provide information unevenly across the different implementation areas.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 39",
+      "page_start": 39,
+      "page_end": 39,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The document reports that public budget information is distributed via multiple channels—including posted reports in woreda and sectoral offices, mass media, billboards, school clubs, and websites—with textual format dominating (used by 66 % of woredas), and recommends adopting a combined textual‑pictorial presentation to improve accessibility and comprehension.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 40",
+      "page_start": 40,
+      "page_end": 40,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Most visited woredas comply with the media‑disclosure guidelines, as 66 % disseminate the approved budget within the mandated 10‑day window (with 28 % experiencing minor delays) and 57 % report timely quarterly budget utilization, indicating that budget information is generally released on time or with only slight delays.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 41",
+      "page_start": 41,
+      "page_end": 41,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Only 16% of woredas in Oromia, SNNP, Harari, and Dire Dawa held pre‑budget discussions, with overall performance rising from 39.5 % in 2016 to 63 % now but still far below the 85 % target, largely owing to political instability and the COVID‑19 pandemic.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 42",
+      "page_start": 42,
+      "page_end": 42,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The audit of visited woredas revealed that 63 % (approximately 69 of 110) conducted pre‑budget discussions, with 78 % of those doing so after draft‑budget preparation and before submission to the woreda council—demonstrating moderate compliance with the directive and underscoring the importance of early community input for final budget approval.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 43",
+      "page_start": 43,
+      "page_end": 43,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The assessment indicates that most woredas discussed the government direction (79%) and draft budget allocations (68%) in pre‑budget discussions, while justification for underperformance was addressed in only about half (53%) of the discussions.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 44",
+      "page_start": 44,
+      "page_end": 44,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment explains that establishing robust accountability mechanisms at the local government level improves resource‑use efficiency, requires lawful and ethical conduct plus avoidance of even the appearance of impropriety to maintain public trust, and entails providing transparent information, defining clear performance and basic service‑delivery indicators, performing periodic reporting, and publishing budgetary data to ensure front‑line employee accountability and governmental accountability to citizens.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 45",
+      "page_start": 45,
+      "page_end": 45,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Implementation of the FTA at regional, city and woreda levels is impeded by a convergence of external shocks (security instability and the COVID‑19 pandemic) and internal constraints—including limited stakeholder awareness of duties, high staff turnover, frequent structural re‑organizations, low morale and insufficient attention to FTA activities—that have diverted local government priorities toward emergency response.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 46",
+      "page_start": 46,
+      "page_end": 46,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Only 64 % (25 of 39) of the Federal budgetary institutions surveyed reported being aware of the FTA initiative, and among the 15 institutions that established a dedicated FTA team or officer, six (40 %) created a new job position for that role.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 47",
+      "page_start": 47,
+      "page_end": 47,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment reports that FTA (Fiscal Transparency and Accountability) initiatives are hampered by inadequate staffing and ambiguous citizen definitions, as only 26 % of sampled institutions conduct awareness‑raising events, underscoring the need to adopt best practices and clarify responsibilities to institutionalize transparent budgeting and accountability.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 48",
+      "page_start": 48,
+      "page_end": 48,
+      "child_sections": [],
+      "key_entities": [
+        "DATE: 2012",
+        "DATE: 2008",
+        "DATE: 2020"
+      ],
+      "summary": "The document reports that although procurement and audit processes are critical for enhancing accountability and reducing misuse of public resources, federal institutions consistently fail to provide timely and adequate information on these areas, achieving only about 15 % compliance with required quarterly reporting.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 49",
+      "page_start": 49,
+      "page_end": 49,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The frequency distribution in Table 3 shows that while basic service standards, procurement plan, external audit findings, project/program activities, and revenue generated are provided only annually (100 % of expectations), budget and expenditure, procurement performance, internal audit findings, and project/program achievement are reported quarterly by 11–20 % of institutions, semi‑annually by 23–39 %, and annually by 47–62 %, and institutions with a dedicated FTA focal person are markedly more likely to provide budgetary information to stakeholders.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 50",
+      "page_start": 50,
+      "page_end": 50,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The audit shows that only 23 % of surveyed federal institutions reported conducting stakeholder and citizen consultations in the budgeting process, reflecting low stakeholder engagement and a corresponding failure to incorporate public priorities into federal work plans, largely attributed to ambiguous stakeholder identification at the federal level and the structural distance from grassroots constituents.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 51",
+      "page_start": 51,
+      "page_end": 51,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Despite high stakeholder engagement in budget planning, limited awareness, capacity, and institutional commitment constrain effective participation, and FTA implementation at the federal budgetary institution level is impeded by insufficient stakeholder awareness, reluctance to disclose financial information, undefined stakeholder criteria, and a tendency to revert to the status quo.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 53",
+      "page_start": 53,
+      "page_end": 53,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The data show that respondents’ marital status is split roughly evenly (45 % never‑married, 43 % married, 4 % widowed, 3 % divorced, 5 % cohabiting/separated), while housing tenure indicates 72 % own homes nationally, with a stark urban‑rural divide (54 % of urban households rent versus only 4 % in rural areas).",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 54",
+      "page_start": 54,
+      "page_end": 54,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Using the national poverty line of 7,184 Birr per adult equivalent per year, 26 % of respondents are classified as poor, with a substantially higher poverty rate in rural areas (31 %) than urban (17 %), and poor households average 6.1 persons—significantly larger than the 4.2‑person average for non‑poor households—while the overall national household size ranges from 3.8 persons in urban to 4.7–5.2 persons in rural settings.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 55",
+      "page_start": 55,
+      "page_end": 55,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The data indicate that impoverished households tend to be larger than non‑poor households, and roughly 70 % of the sampled households report awareness of at least some steps in the local budget process, reflecting moderate but incomplete citizen understanding of municipal budgeting.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 56",
+      "page_start": 56,
+      "page_end": 56,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: PBS II",
+        "ORGANIZATION: ESPES",
+        "DATE: 2009 to 2022"
+      ],
+      "summary": "Between the 2009/10 PBS II baseline and the 2022 ESPES survey, the proportion of respondents who reported understanding the local budgeting process grew more than seven‑fold—from 9 % to 70 %—with markedly higher understanding levels among those with formal education and urban residents compared with respondents lacking education or living in rural areas.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 57",
+      "page_start": 57,
+      "page_end": 57,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "\nThe focus‑group survey shows that 38 % of respondents perceive their understanding of the local government’s four‑stage budget process (preparation, approval, implementation, and control) as increasing, reflecting awareness of the full cycle of planning, execution, monitoring, and evaluation (see Figures 32–33).",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 58",
+      "page_start": 58,
+      "page_end": 58,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "A cross‑sectional survey of regional and city administrations shows that 57 % of respondents correctly identified budget planning/preparation and 59 % identified implementation as budgeting activities, while only 25 % recognized performance reviews, and that nationwide 79 % reported awareness of the FTA initiative, with awareness ranging from 87 % in Dire Dawa to 69 % in Afar and higher unawareness in developing regional states.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 59",
+      "page_start": 59,
+      "page_end": 59,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Survey data indicate that 58 % of citizens are aware that their local government must engage the community in pre‑budget discussions and address complaints, only 32 % know about the requirement to provide procurement and audit reports, and 91 % of respondents report that awareness of the FTA initiative has risen or remained unchanged over the past five years.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "DOCUMENT SEGMENT 60",
+      "page_start": 60,
+      "page_end": 60,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: FTA"
+      ],
+      "summary": "Figure 37 (p. 44) quantifies how citizens’ understanding of the Free Trade Agreement (FTA) initiative has shifted over the surveyed period, illustrating the magnitude of change in comprehension.",
+      "data_types_present": [
+        "text"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 1,
+      "page_end": 1,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The provided segment contains no readable data; it consists solely of empty placeholder commas, indicating an absence of substantive content.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 1,
+      "page_end": 1,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Sure, could you please provide the document segment you’d like summarized?",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 1,
+      "page_end": 1,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "I’m ready to help—just paste the document segment you’d like summarized, and I’ll provide a one‑sentence technical summary.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 1,
+      "page_end": 1,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The provided segment contains no technical information—it consists solely of a series of commas serving as placeholders.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 27,
+      "page_end": 27,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment appears to be a table header row defining three columns—Urban, Rural, and Total—used to classify data by geographic area.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 27,
+      "page_end": 27,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment is a single data record for the Amhara region containing five numeric values (21, 63, 197, 748, 945) interspersed with empty fields, likely representing counts or measurements across five categories or time periods.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 27,
+      "page_end": 27,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment shows a labeled entry “SNNP” followed by five numeric values (16, 48, 210, 510, 720) that form a monotonically increasing sequence, suggesting a possible metric or count that grows over successive intervals.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 28,
+      "page_end": 28,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "A CSV data row containing the identifier “SWEP” followed by five numeric values (9, 27, 120, 285, 405) representing successive measurements.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 28,
+      "page_end": 28,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "\nThe fragment shows a single record for the region “Gambella” that includes five numeric values (4, 12, 60, 120, 180) arranged in a rising sequence, suggesting a time‑series or other ordered measurement of an unspecified metric.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 28,
+      "page_end": 28,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment is a single data row that pairs the region label “Benishangul‑Gumuz” with five numeric values (3, 9, 45, 90, 135) representing an unspecified metric.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 28,
+      "page_end": 28,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": " Dire DawaThe data row for comprises the city name followed by five numeric fields—3, 9, 135, 0, and 135—where the third and fifth fields both equal 135, indicating a possible duplicate or summary value in the record.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 29,
+      "page_end": 29,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "It lists 39 staff members from the Planning and/or Finance Directorates of selected federal‑level organizations and universities, as detailed in Annex C.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 29,
+      "page_end": 29,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: City Administration",
+        "ORGANIZATION: Bureau of Finance staff"
+      ],
+      "summary": "The segment records a data entry linking the City Administration to the Bureau of Finance staff with an associated numeric identifier of 2.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 29,
+      "page_end": 29,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Kebele Administrators",
+        "ORGANIZATION: Key community leaders/Elders"
+      ],
+      "summary": "The segment records kebele 515 linked to its administrative and community stakeholders, specifically identifying kebele administrators and key community leaders/elders as the primary roles.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 49,
+      "page_end": 49,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The table shows that while reporting categories such as basic service standards, procurement plans, external audit findings, project/program activities, and revenue generated are required annually and achieve the full 100 % target, other items—budget and expenditure, procurement performance, internal audit findings, and project/program achievement—are reported quarterly or semi‑annually with achievement rates ranging from 11 % to 62 %.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 69,
+      "page_end": 69,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Public Administration",
+        "ORGANIZATION: International Review of Administrative Sciences",
+        "DATE: 2001",
+        "DATE: 2011"
+      ],
+      "summary": "Lowndes, Prachett, and Stoker (2001) empirically map citizen perspectives on emerging trends in public participation, identifying rising engagement levels, underlying motivations, and structural barriers within public administration, while Michels (2011) evaluates innovative democratic governance models, demonstrating how enhanced citizen participation can produce more responsive, accountable, and legitimate democratic outcomes.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 78,
+      "page_end": 78,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The performance‑importance matrix classifies items into four quadrants—Focus (high community importance but low current performance, requiring increased effort), Keep Up the Good Work (high importance and high performance, to be maintained), Possible Overkill (high performance but low perceived importance, suggesting resource reallocation), and Low Priority (low importance and low performance, to be deprioritised)—providing a systematic framework for prioritising resources and improvement actions.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 87,
+      "page_end": 87,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "This section identifies and defines the economic variables examined—such as GDP, inflation, unemployment, interest rates, and trade balances—describing their measurement methods, data sources, and relevance to the overall analysis.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 87,
+      "page_end": 87,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Social variables are measurable attributes (e.g., demographic, cultural, economic, and relational characteristics) that capture aspects of social structure and behavior for use in statistical analyses and modeling.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 88,
+      "page_end": 88,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "Institutional variables are quantifiable indicators of formal and informal institutional structures—such as governance quality, regulatory frameworks, and policy regimes—used in quantitative analyses to capture their influence on economic, social, or political outcomes.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 90,
+      "page_end": 90,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Journal of Economic Behavior & Organization",
+        "DATE: 2001"
+      ],
+      "summary": "This study employs cross‑country regressions of perceived corruption (International Country Risk Guide) on the proportion of women in ministerial and parliamentary positions, controlling for institutional and economic factors, and finds that greater female representation in government is associated with significantly lower corruption levels.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 107,
+      "page_end": 107,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The initiative calls for sustained enhancements to information accessibility while equally prioritizing usability improvements to ensure the information is easy to understand.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 108,
+      "page_end": 108,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "It proposes expanding community involvement in performance‑review justification, instituting regular transparency‑awareness campaigns on budgetary information, and mandating federal institutions to publicly disclose procurement processes and audit findings.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 110,
+      "page_end": 110,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: FTA"
+      ],
+      "summary": "The FTA initiative has achieved substantial progress in institutionalising transparency and accountability, but its gains have been jeopardised by compounded exogenous shocks—political instability, armed conflict, and the COVID‑19 pandemic—that have triggered a severe economic crisis, necessitating increased resource allocation and sustained policy commitment to mitigate their impact and restore forward momentum.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 111,
+      "page_end": 111,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment marks the column for the dependent variable—the outcome or target to be predicted or explained in the statistical or predictive model.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 111,
+      "page_end": 111,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment serves as a section header indicating that the subsequent data will present explanatory variables—specifically economic variables—used in the analysis.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 111,
+      "page_end": 111,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "This segment identifies the social variables—including demographic characteristics, cultural norms, community dynamics, and user interaction patterns—that influence system design, implementation, and performance outcomes.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 111,
+      "page_end": 111,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment consists of a heading for “Institutional variables,” indicating that the subsequent content will define and operationalize quantitative metrics that capture institutional attributes such as governance structures, policy frameworks, and regulatory regimes.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 112,
+      "page_end": 112,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment presents a hierarchical list of Ethiopian administrative units, mapping each Region (Afar, Amhara) to its Zone/Sub‑city (e.g., Zone 1, Zone 3, Zone 5, North Gondar, Gonder, South Gondar, East Gojam) and corresponding Wereda/Town (e.g., Dupti, Afambo, Awash Fentale, Amibara, Semurobi, Lay Armacho, Wegera, Gonder, Libo Kemekem, West Este, Debre Tabor, Enebse Sar Midir, Debre Elias).",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 113,
+      "page_end": 113,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The fragment displays a hierarchical list of Ethiopia’s Oromia Region, mapping each zone—Bale, Ilu Abbabora, Jimma, West Shewa, Burayou Special Zone, and North Shewa—to its corresponding weredas/towns such as Goba, Robe, Chora, Darimu, Metu, Kersa, Omo Nada, Gomma, Jimma, Dendi, Ejere, Ambo, Burayou, Jidda, and Kuyu.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 114,
+      "page_end": 114,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment presents a tabular mapping of 16 Ethiopian administrative units (IDs 82‑97) that link each identifier to a region (SNNP, Sidama, or SWEP), its corresponding zone, and the associated wereda/town.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 115,
+      "page_end": 115,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "It is a tabular lookup of 17 records (IDs 123‑139) that maps each identifier to an Ethiopian administrative hierarchy consisting of Region/City Administration (Addis Ababa or Benishangul‑Gumuze), Zone/Sub‑city (e.g., Kolfe Keraniyo, Gulele, Lideta, Cherkos, Arada, Addis Ketema, Yeka, Bole, Assosa, Bambasi), and Wereda/City codes (e.g., 08/09, 06, 03/04/05, etc.).",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Finance"
+      ],
+      "summary": "The segment is a five‑field data record in which the second field contains the numeric identifier 1, the fifth field lists the source “Ministry of Finance,” and the first, third, and fourth fields are empty.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Plan and Development"
+      ],
+      "summary": "It is a CSV‑style record consisting of a leading empty field, a numeric field value 3, two subsequent empty fields, and a final text field containing “Ministry of Plan and Development.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment contains five comma‑separated fields: the first, third and fourth fields are empty, the second field holds the numeric value 5, and the fifth field contains the string “Ethiopian News Agency.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Agriculture"
+      ],
+      "summary": "The segment is a CSV‑format record with five fields: the first, third, and fourth fields are empty, the second field contains the numeric value 7, and the fifth field holds the text “Ministry of Agriculture.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ethiopia Commodity Exchange Authority",
+        "DATE: 9"
+      ],
+      "summary": "The segment is a six‑field data record where the second field holds the numeric value 9, the fifth field contains the text “Ethiopia Commodity Exchange Authority,” and the remaining fields are empty.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Trade and Regional Integration"
+      ],
+      "summary": "The segment records a single row in which entry 11 is associated with the Ministry of Trade and Regional Integration, with the surrounding fields left empty.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Culture and Sport"
+      ],
+      "summary": "The segment appears to be a data record indicating entry number 13 for the Ministry of Culture and Sport, with empty or null values in the preceding fields.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Mines"
+      ],
+      "summary": "The entry is a CSV‑formatted record with six fields: the first, third, fourth and sixth fields are empty, the second field contains the integer 15, and the fifth field holds the label “Ministry of Mines.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: UNKNOWN",
+        "DATE: UNKNOWN"
+      ],
+      "summary": "The snippet appears to be a CSV‑style record where the numeric field “17” and the text field “Ministry of Urban and Infrastructure” occupy two columns, while the surrounding commas represent omitted or empty values.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Women and Social Affairs"
+      ],
+      "summary": "The segment is a bibliographic record (likely a CSV row) containing an empty identifier, the page number 19, two blank fields, and the source organization “Ministry of Women and Social Affairs.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Education"
+      ],
+      "summary": "This snippet appears to be a CSV‑style record consisting of a numeric identifier (21), three empty placeholder fields, and a final field containing the organization name “Ministry of Education.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Addis Ababa Science and Technology University",
+        "DATE: 23"
+      ],
+      "summary": "The segment is a five‑field data record containing an empty name field, a numeric age value of 23, two additional unspecified fields, and the institution field set to Addis Ababa Science and Technology University.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Technical and Vocational Training Institute",
+        "DATE: 25"
+      ],
+      "summary": "The record indicates a 25‑year‑old individual who completed training at a Technical and Vocational Training Institute.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Gonder University",
+        "DATE: 27"
+      ],
+      "summary": "The snippet is a five‑column data record containing a blank first field, the numeric value 27 in the second field (likely age), blank third and fourth fields, and the institution “Gonder University” in the fifth field.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Dilla University",
+        "DATE: 29"
+      ],
+      "summary": "\nThe segment is a partially populated CSV‑style record containing an empty first field, an “age” value of 29, two additional empty fields, and a university field set to “Dilla University.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Jimma University"
+      ],
+      "summary": "The segment is a five‑field CSV‑style record: the first field is empty, the second holds the numeric value 31, the third and fourth fields are empty, and the fifth field contains the string “Jimma University.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Gambella University"
+      ],
+      "summary": "The segment is a six‑field CSV line where fields 1, 3, 4, and 6 are empty, field 2 holds the integer 33, and field 5 contains the text “Gambella University.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Jigjiga University"
+      ],
+      "summary": "The snippet is a five‑field CSV record where the first field is empty, the second field holds the numeric value 35, the third and fourth fields are empty, and the fifth field contains the literal “Jigjiga University.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ministry of Health"
+      ],
+      "summary": "\nThe document fragment appears to be a table row containing an empty first column, a numeric identifier (37) in the second column, two additional empty columns, and a categorical entry for “Ministry of Health” in the final column, suggesting a record in a health‑sector dataset.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 116,
+      "page_end": 116,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Amanuel Mental Specialized hospital"
+      ],
+      "summary": "The segment records a 39‑year‑old patient at Amanuel Mental Specialized Hospital, with blank fields for other demographic details.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 117,
+      "page_end": 117,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The objective is to evaluate the implementation progress of the FTA initiative at federal and sub‑national levels by investigating the presence of dedicated implementation teams, assessing management capacities and inter‑governmental coordination, identifying strengths, challenges, and stakeholder ownership, and gathering recommendations for improvement through a structured set of interview questions.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 118,
+      "page_end": 118,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Woreda/Kebele"
+      ],
+      "summary": "This document evaluates citizen participation in budget processes, the regularity of budget disclosure, the use of budget and expenditure templates, the effectiveness of community consultation, and the performance of Freedom to Information tools in enhancing public‑budget awareness, meeting information requirements, and strengthening accountability, while proposing sustainable, cost‑effective disclosure mechanisms based on national and international best practices.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 119,
+      "page_end": 119,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "It describes an evaluation methodology (surveys, key informant interviews, focus‑group discussions and case studies) to assess gender‑equality outcomes, citizen and civil‑society participation, the responsiveness of government officials, complaint‑redress mechanisms, and social‑cultural constraints across federal, regional, woreda and urban administration levels for the FTA initiative.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 120,
+      "page_end": 120,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment presents an evaluation framework—through a set of probing questions—to assess the accountability of woreda/city officials and staff, the transparency of financial/budget information, the effectiveness of procurement and audit disclosure, the extent of citizen participation in budget allocation and decision‑making, citizens’ awareness of their constitutional rights, and the alignment of the FTA program design with community‑identified needs for improved basic service delivery.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 121,
+      "page_end": 121,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Ethiopia",
+        "DATE: None"
+      ],
+      "summary": "The study investigates the economic, social, and institutional determinants of local‑government transparency in Ethiopia at the regional and woreda levels by applying a mixed‑methods approach that combines document review, surveys, key‑informant interviews, focus‑group discussions, and field observations.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 122,
+      "page_end": 122,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: Tigrai",
+        "ORGANIZATION: Amhara",
+        "ORGANIZATION: Afar",
+        "ORGANIZATION: Oromia",
+        "ORGANIZATION: Somali",
+        "ORGANIZATION: Gambella",
+        "ORGANIZATION: Benishangul-Gumuz",
+        "ORGANIZATION: Harari",
+        "ORGANIZATION: SNNPR",
+        "ORGANIZATION: Sidamaa"
+      ],
+      "summary": "The document provides a structured identification header for an Ethiopian field survey questionnaire, capturing the administrative‑geographic hierarchy (region/city, zone, woreda, kebele), questionnaire code, date, enumerator/supervisor identifiers, and interview start and end times.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 122,
+      "page_end": 122,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The questionnaire’s Section B collects the respondent’s demographic and socio‑economic data—including sex, age, marital status, household size and gender composition, female participation in local governance, literacy and highest grade completed, and monthly income (in Birr).",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 123,
+      "page_end": 123,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment lists four survey items (Q18‑Q21) that collect respondents’ monthly income brackets (Birr 2001‑4000, 4001‑7000, > 7000, “no answer”, “don’t know”), self‑perceived wealth relative to their neighborhood (very poor to very rich), place of residence (urban/rural), overall quality of life (very high to very bad), and satisfaction with Woreda‑provided services (very satisfied to very bad), each using categorical or ordinal response scales.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 124,
+      "page_end": 124,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment lists implementation responsibilities—provision of labour and other in‑kind inputs, approving works before final payment, reviewing sectoral office performance, overseeing and monitoring implementation, and other tasks—and then presents community‑engagement response options for the FTA initiative, such as accepting and resolving complaints, providing procurement, audit and performance reports, delivering awareness‑creation training, sharing budget information, and involving the community in pre‑budget processes.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 125,
+      "page_end": 125,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "This excerpt presents three survey items (questions 27‑29) that measure respondents’ perceptions of council roles in budget approval, review, and input, citizen participation in budget decision‑making, and the perceived importance of citizens’ opinions and priorities for Woreda budgeting.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 126,
+      "page_end": 126,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The provided segment outlines a structured questionnaire aimed at assessing citizens' perceptions of local budgeting priorities, their preferred methods of participation, and changes in their understanding and engagement with the budget process over the past five years.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 127,
+      "page_end": 127,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: government"
+      ],
+      "summary": "The questionnaire captures respondents’ exposure to various information channels (radio, TV, newspaper, government leaflets, community organizations, and interpersonal conversations) and assesses their engagement with local governance, including whether they have been asked for input on municipal services, attended recent public meetings with city or woreda officials, and the perceived level of influence they have in those consultations.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 128,
+      "page_end": 128,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The questionnaire gathers data on kebele‑level local resource generation and contributions, respondents’ perceived change in engagement compared to five years ago, and details of their participation in budget‑literacy training (BLT) – including frequency, timing, and the specific topics (budget formulation, execution, planning, and disclosure) covered.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 129,
+      "page_end": 129,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "It is a structured survey questionnaire that captures respondents’ awareness of budget and expenditure postings, service‑delivery information, and basic service‑unit availability in their woreda/kebelle, using multiple‑choice items about the presence of posted templates, discussion participants, and service sectors (health, education, agriculture, water supply).",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 130,
+      "page_end": 130,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "This segment is a structured questionnaire that gathers data on which media (TV, radio, newspaper, templates, brochures, community meetings, artistic forums, social media) were used to disclose budget and service information, asks respondents to rate the effectiveness of those media, and requests open‑ended suggestions for improving the disclosure channels.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 131,
+      "page_end": 131,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment is a structured Woreda‑level citizen‑participation survey containing three items: a Likert‑type frequency scale (Never, Rarely, Often, No idea) on citizens’ opportunities to express views on the Woreda budget, a multiple‑choice question on which project most influences budget and finance (FTA, SA, GRM, Other government meeting), and a binary question on whether respondents have discussed budget planning (Yes).",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 132,
+      "page_end": 132,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The fragment records a structured questionnaire with Likert‑type rating items (responses coded 1‑4, 99 for missing or not applicable) assessing staff courtesy, helpfulness, physical condition and maintenance of the facilities, perceived service quality and informal fees, and quality of medical attention, followed by a categorical response field (code 97) for the follow‑up question on reasons for not using a governmental health facility.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 133,
+      "page_end": 133,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The document fragment is a sparse CSV‑style table of twelve columns where row 1 contains the non‑empty value “school” in column 8, row 2 contains the label “Other” in column 8 with an associated numeric value 6 in column 11, and all other cells are empty.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 133,
+      "page_end": 133,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "This segment describes a four‑point Likert‑scale questionnaire (including a 99 code for non‑responses) for parents to evaluate three school‑related statements—convenient distance, teacher/administrator availability, and student resource provision—using response options from “Strongly Agree” to “Strongly Disagree” or “Don’t Know.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 133,
+      "page_end": 133,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The document consists of a short survey with two questions: Question 104 asks respondents whether the FTA contributed to improved education services (Yes/No, coded 1/2), and Question 105 asks which agricultural services the respondent received (Yes/No).",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 134,
+      "page_end": 134,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment enumerates ten rural livelihood intervention categories—cooperative formation, obtaining loans, marketing, establishing food‑processing mills, income‑generating activities, women‑focused health/finance/education training, provision of farm inputs, animal husbandry, and environmental protection—each potentially classified under support level 1 or 2.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 135,
+      "page_end": 135,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The document presents a single multiple‑choice survey question (Q109) asking respondents to identify their primary water source from options that include communal spigots not connected to the Woreda pipeline, private connections to the Woreda pipeline, private protected (treated) wells or springs, private unprotected wells/springs, and communal spigots (Bono) connected to the pipeline.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 136,
+      "page_end": 136,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment outlines a structured survey (questions 7‑11 and 114‑119) that collects data on respondents’ barriers to filing complaints (such as fear of no response, fear of authority, and embarrassment), the service sectors for logged grievances, the main issue prompting the complaint, the recipient of the complaint, and the time taken to resolve the appeal.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 137,
+      "page_end": 137,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The excerpt is an impacts questionnaire consisting of five items (IDs 124‑128) that use a five‑point Likert scale (strongly agree to strongly disagree) to gauge citizens’ perceptions of visibility in budgeting, improvements in service quality (health, water, education, agriculture), reduced resource miss‑utilization, and enhanced quality of life, plus a binary yes/no question assessing whether the FTA initiative contributed to better water supply.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 138,
+      "page_end": 138,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment outlines a three‑level sustainability rating framework (indices 135, 125, 136‑139) that evaluates the quality of services (health, education, water, agricultural extension) and citizen‑engagement dimensions—engagement in development, consideration of citizen voice in decision‑making, transparency to citizens, and government response to citizen voice—using the categories “Highly sustainable,” “Sustainable,” and “Not sustainable.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 139,
+      "page_end": 139,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The document segment is a structured questionnaire template for collecting geographic identification data—listing 13 regions/cities (A1), zone (A2), woreda (A31), and kebele (A4) names—along with a binary indicator of whether social accountability interventions are being implemented in the woreda (A32), and fields for questionnaire code, date, and enumerator name/code (A5‑A7).",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 140,
+      "page_end": 140,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: MoFED",
+        "ORGANIZATION: PBS sector offices"
+      ],
+      "summary": "This segment of the questionnaire (questions B7‑B10) gathers categorical information on respondents’ office affiliation, tenure, the specific sex‑disaggregated data‑related activities they use to monitor FTA implementation, and whether other households are involved.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 141,
+      "page_end": 141,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "This document fragment consists of a set of multiple‑choice survey items (C6–C8) that capture respondents’ evaluations of service adequacy, transparency, accountability, the perceived impact of staff capacity on service delivery, and the overall level of service provision.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 142,
+      "page_end": 142,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "It is a structured questionnaire consisting of Section C (questions on donor support, office capacity to implement FTA initiatives, and the relevance of the FTA structure) and Section D (questions on attendance at FTA/budget‑literacy trainings and the specific modules completed), each presented with multiple‑choice response options.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 143,
+      "page_end": 143,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "\nThis document segment presents a structured questionnaire (questions D7 through D12) that asks respondents to assess which aspects of a training program (content, language, visual format, duration, other) were most relevant, whether they participated in its rollout, to whom it was delivered, whether they believe the BLT initiative contributed to FTA improvement, and to rate the magnitude of any resulting changes over the past five years.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 144,
+      "page_end": 144,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "This document excerpt presents three survey items (E3–E5, with an incomplete E6) that capture respondents’ assessments of how often required government actions are taken timely, trends in government responsiveness to citizen views over the last five years, and the criteria (cost, citizen priority, national/regional priorities) the city administration should weigh when deciding budget allocation.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 145,
+      "page_end": 145,
+      "child_sections": [],
+      "key_entities": [
+        "ORGANIZATION: local government",
+        "ORGANIZATION: Woreda",
+        "ORGANIZATION: City council"
+      ],
+      "summary": "The document is a survey instrument that asks respondents to identify which government records—such as audit reports, council session proceedings, policy and procedure manuals, and personal or property documents—are readily obtainable by citizens and civil‑society organizations from the local government, and whether any cases have occurred where those entities received sufficient information.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 146,
+      "page_end": 146,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "It surveys respondents about the quality of services and the availability, type, and awareness of feedback mechanisms, suggestion boxes, and grievance‑handling processes across health, education, agriculture and other sectors.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 147,
+      "page_end": 147,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment describes a questionnaire (G3/G4) that asks respondents to rank seven accountability mechanisms (e.g., regulations, penalties, “others”) and to evaluate whether adequate systems and information flows exist to empower citizens and civil‑society organizations to hold local officials, employees, and committees in the woreda/city accountable.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 148,
+      "page_end": 148,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The provided segment is a structured multiple‑choice questionnaire (items G11.2 through G14) that gathers data on citizens’ awareness of their woreda’s budget information provision, performance reporting, service‑delivery standard evaluation, administrative actions, knowledge of the 2014 budget amount, and the service sectors to which the posted information pertains.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 149,
+      "page_end": 149,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment is a structured survey instrument comprising four Likert‑type questions (H4–H7) that ask respondents to confirm the existence of a strategic plan, assess the adequacy of the M&E system and information flow for citizen and CSO accountability, evaluate the material and human capacity to monitor and evaluate project activities at the office level, and indicate whether they have measured any FTA‑related indicators, with response scales ranging from “confirmed/not confirmed” to “yes/partially/no/I don’t know.”",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 150,
+      "page_end": 150,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The document outlines a multi‑component project—supporting grievance redress mechanisms, local public finance management, managing for results, and other areas—integrated with citizen‑engagement sub‑components (information flow, participatory planning, joint monitoring) and core capacity‑development activities focused on participatory planning, citizen‑state collaboration, and accountability.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 151,
+      "page_end": 151,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The excerpt is a structured survey questionnaire containing Likert‑scale and open‑ended items that ask respondents to rate the change in linkage between South Africa and the Free Trade Agreement over the past two years, propose suggestions to strengthen FTA and GRM (governance‑risk‑management) linkages to improve citizen engagement, and evaluate the relevance of the FTA program to the local community.",
+      "data_types_present": [
+        "table"
+      ]
+    },
+    {
+      "title": "Figure 37: Changes in citizens’ understanding of the FTA initiative\n44",
+      "page_start": 152,
+      "page_end": 152,
+      "child_sections": [],
+      "key_entities": [],
+      "summary": "The segment presents a Most Significant Change (MSC) survey instrument that asks stakeholders—banks/donors, CSOs/Local NGOs, or respondents who are uncertain—to identify the most notable improvements in transparency and accountability of public budget processes at the region, woreda, and kebele levels during the project implementation period, and to list at least three economic, social, and institutional critical success factors that drove those changes.",
+      "data_types_present": [
+        "table"
+      ]
+    }
+  ]
+}
