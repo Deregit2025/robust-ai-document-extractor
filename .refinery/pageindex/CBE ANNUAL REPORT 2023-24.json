@@ -2,122 +2,17 @@
   "doc_id": "CBE ANNUAL REPORT 2023-24",
   "root_sections": [
     {
-      "title": "DOCUMENT SEGMENT 1",
+      "title": "Executive Summary",
       "page_start": 1,
-      "page_end": 1,
-      "child_sections": [],
-      "key_entities": [
-        "ORGANIZATION: Committee of the Board of Directors",
-        "DATE: 2023/24",
-        "DATE: 2021/22"
-      ],
-      "summary": "The 2023/24 financial report cover uses a black‑and‑yellow design with the year in black text, a gold emblem indicating the third annual meeting of the Committee of the Board of Directors, and three triangles that symbolize the three consecutive years 2023/24, 2022/23, and 2021/22.",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 2",
-      "page_start": 2,
-      "page_end": 2,
-      "child_sections": [],
-      "key_entities": [],
-      "summary": "Could you please provide the document segment you’d like summarized?",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 3",
-      "page_start": 3,
-      "page_end": 3,
-      "child_sections": [],
-      "key_entities": [],
-      "summary": "\nThe segment contains multiple long tables—likely menus or feature lists—that present only isolated detail entries without explanatory text, making the tables’ content and purpose unclear to the reader.",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 4",
-      "page_start": 4,
-      "page_end": 4,
-      "child_sections": [],
-      "key_entities": [],
-      "summary": "The image depicts a wall‑mounted, color‑coded business vision poster that presents the organization’s mission statement and strategic goals in a clearly labeled, structured layout.",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 5",
-      "page_start": 5,
-      "page_end": 5,
-      "child_sections": [],
-      "key_entities": [],
-      "summary": "The segment represents a structured, multi‑paragraph instructional guide or educational material that presents detailed, organized information on a broad topic, formatted as part of a book or learning platform to provide a clear, accessible learning experience.",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 6",
-      "page_start": 6,
-      "page_end": 6,
-      "child_sections": [],
-      "key_entities": [
-        "DATE: January",
-        "DATE: July",
-        "DATE: December"
-      ],
-      "summary": "The image is an Excel bar chart on a white background containing eight bars grouped into three color‑coded series (January, July, December) that visually represent sector performance across the three time periods.",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 7",
-      "page_start": 7,
-      "page_end": 7,
-      "child_sections": [],
-      "key_entities": [
-        "DATE: 2016",
-        "DATE: 2015"
-      ],
-      "summary": "The image shows a bar chart comparing three financial metrics—revenue, profit, and expenses—across three years (2015, 2016, and 2018), comprising 12 bars (four per metric) that highlight each category’s peak values and reveal that while performance peaked in those years, expenses consistently exceeded revenue.",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 8",
-      "page_start": 8,
-      "page_end": 8,
-      "child_sections": [],
-      "key_entities": [],
-      "summary": "The document’s layout presents a centered group portrait of five individuals dressed in identical formal black suits, surrounded symmetrically by additional black‑suit images, creating a cohesive, formal visual composition.",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 9",
-      "page_start": 9,
-      "page_end": 9,
-      "child_sections": [],
-      "key_entities": [],
-      "summary": "The image is a corporate board display on a sheet or board that lists six directors—Attama Atolyayi (Naga), Iselin Yaha (Iyo‑Isoya), Etna Elnourine (Phoebe), Fathalifah Iyya (Fatima), Iselyn Tololeolu (Enel), and Fumihiko “Sheppetto” Nkosi—each annotated with name, title, company, and the repeated “Board of Directors (continued)” header.",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 10",
-      "page_start": 10,
       "page_end": 10,
       "child_sections": [],
-      "key_entities": [],
-      "summary": "The image consists of five individual portrait photographs of men wearing suits, arranged side by side against a uniform purple background, each captured in a different pose that emphasizes formality and authority.",
+      "key_entities": [
+        "{'type': 'Organization', 'value': 'Commercial Bank of Ethiopia'}",
+        "{'type': 'Metric', 'value': '20,000 won'}",
+        "{'type': 'Metric', 'value': '150'}",
+        "{'type': 'Metric', 'value': '3'}"
+      ],
+      "summary": "The Executive Summary presents a comprehensive list of Ethiopian commercial banks and details the production of a 150‑page Annual Report by the Commercial Bank of Ethiopia, completed at a cost of 20,000 won. It also references the “Digital Moving Forward” e‑book, which provides a three‑image, 3‑D digital‑banking overview titled “Global Vision” with an integrated product catalog and includes a serif‑font job‑description document that outlines prioritized candidate skills.",
       "data_types_present": [
         "text"
       ]

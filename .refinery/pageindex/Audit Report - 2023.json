@@ -2,27 +2,15 @@
   "doc_id": "Audit Report - 2023",
   "root_sections": [
     {
-      "title": "DOCUMENT SEGMENT 1",
+      "title": "Executive Summary",
       "page_start": 1,
-      "page_end": 1,
+      "page_end": 10,
       "child_sections": [],
       "key_entities": [
-        "DATE: 30 June 2021"
+        "{'type': 'Organization', 'value': 'Development Bank of Ethiopia'}",
+        "{'type': 'Organization', 'value': 'Development Bank of Eritrea'}"
       ],
-      "summary": "Summary unavailable",
-      "data_types_present": [
-        "text"
-      ]
-    },
-    {
-      "title": "DOCUMENT SEGMENT 2",
-      "page_start": 2,
-      "page_end": 2,
-      "child_sections": [],
-      "key_entities": [
-        "DATE: July - June 2005"
-      ],
-      "summary": "This segment presents the financial statements for the fiscal year spanning July 2004 through June 2005.",
+      "summary": "\nThe Executive Summary describes two printed materials: a green‑and‑white book cover titled “Indepth Auditor’s Report and Financial Statements” that displays the Development Bank of Ethiopia logo, and a beige‑backed document titled “Development Bank of Eritrea Independent Auction” that features the bank’s logo and underlined text. It also references a page from a stamp‑collecting book containing a white list and three postage stamps, indicating a collector’s‑item context.",
       "data_types_present": [
         "text"
       ]
